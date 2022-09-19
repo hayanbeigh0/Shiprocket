@@ -249,36 +249,33 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                           color: Colors.white,
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 0.0),
-                        child: Expanded(
-                          child: ContainedTabBarView(
-                            tabBarProperties: const TabBarProperties(
-                              indicatorWeight: 5,
-                              indicatorColor: Color.fromARGB(212, 87, 39, 176),
-                              labelColor: Color.fromARGB(212, 87, 39, 176),
-                              unselectedLabelColor:
-                                  Color.fromARGB(134, 0, 0, 0),
-                              labelPadding: EdgeInsets.all(8),
-                            ),
-                            tabs: const [
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Text(
-                                  'Upcoming Trainings',
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Text(
-                                  'Registered Trainings',
-                                ),
-                              ),
-                            ],
-                            initialIndex: 0,
-                            views: [
-                              Container(),
-                              Container(),
-                            ],
+                        child: ContainedTabBarView(
+                          tabBarProperties: const TabBarProperties(
+                            indicatorWeight: 5,
+                            indicatorColor: Color.fromARGB(212, 87, 39, 176),
+                            labelColor: Color.fromARGB(212, 87, 39, 176),
+                            unselectedLabelColor: Color.fromARGB(134, 0, 0, 0),
+                            labelPadding: EdgeInsets.all(8),
                           ),
+                          tabs: const [
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(
+                                'Upcoming Trainings',
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text(
+                                'Registered Trainings',
+                              ),
+                            ),
+                          ],
+                          initialIndex: 0,
+                          views: [
+                            Container(),
+                            Container(),
+                          ],
                         ),
                       ),
                     ],
