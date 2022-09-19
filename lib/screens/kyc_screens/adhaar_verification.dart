@@ -6,7 +6,7 @@ import '../../utils/box_styles.dart';
 import '../../utils/color.dart';
 
 class AdhaarVerification extends StatefulWidget {
-  AdhaarVerification({super.key});
+  const AdhaarVerification({super.key});
 
   @override
   State<AdhaarVerification> createState() => _AdhaarVerificationState();
@@ -169,7 +169,7 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                   ),
                                   TextFormFieldContainer(
                                     textForm: TextField(
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         hintText: 'Aadhaar Card Number',
                                         border: InputBorder.none,
                                       ),
@@ -196,7 +196,7 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                   const SizedBox(
                                     height: 10,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Enter 12 digit Aadhar Card Number',
                                     style: TextStyle(
                                       fontSize: 15,
@@ -222,7 +222,7 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                         ),
                                       ),
                                       onPressed: disableButton ? null : () {},
-                                      child: Text(
+                                      child: const Text(
                                         'Generate OTP',
                                         style: TextStyle(
                                           fontSize: 17,
@@ -232,13 +232,13 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 15,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: double.infinity,
                                     child: Text(
-                                      'By clicking \"Verifv KYC\", you agree to Shiprocket\'s KYC',
+                                      'By clicking "Verifv KYC", you agree to Shiprocket\'s KYC',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontSize: 14,
@@ -259,7 +259,7 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   Text(
@@ -270,7 +270,7 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                       color: ColorStyle.colorPrimary,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                 ],
