@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:shiprocket/screens/kyc_screens/kyc_screen2.dart';
 import 'package:shiprocket/utils/box_styles.dart';
 import 'package:shiprocket/utils/color.dart';
 
-class KYCScreen extends StatefulWidget {
-  KYCScreen({super.key});
+class KYCScreen1 extends StatefulWidget {
+  const KYCScreen1({super.key});
 
   @override
-  State<KYCScreen> createState() => _KYCScreenState();
+  State<KYCScreen1> createState() => _KYCScreen1State();
 }
 
-class _KYCScreenState extends State<KYCScreen> {
+class _KYCScreen1State extends State<KYCScreen1> {
   bool soleProprietorshipSelected = false;
 
   bool individualSelected = false;
@@ -52,7 +53,7 @@ class _KYCScreenState extends State<KYCScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
@@ -93,12 +94,12 @@ class _KYCScreenState extends State<KYCScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Container(
                             color: Colors.transparent,
-                            child: Text(
+                            child: const Text(
                               'Step 1/3 - Business Structure',
                               style: TextStyle(
                                 fontSize: 16,
@@ -106,7 +107,7 @@ class _KYCScreenState extends State<KYCScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Stack(
@@ -121,7 +122,8 @@ class _KYCScreenState extends State<KYCScreen> {
                                 height: 12,
                               ),
                               Container(
-                                width: MediaQuery.of(context).size.width * 0.33,
+                                width:
+                                    MediaQuery.of(context).size.width * 1 / 3,
                                 height: 12,
                                 decoration: BoxDecoration(
                                   color: ColorStyle.colorPrimary,
@@ -130,17 +132,17 @@ class _KYCScreenState extends State<KYCScreen> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 40,
                           ),
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
-                                color: Color.fromARGB(255, 203, 202, 202),
+                                color: const Color.fromARGB(255, 203, 202, 202),
                               ),
                               borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   color: Color.fromARGB(16, 0, 0, 0),
                                   blurRadius: 10,
@@ -158,14 +160,14 @@ class _KYCScreenState extends State<KYCScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Please Confirm Your Business Structure:',
                                     style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   GestureDetector(
@@ -183,7 +185,7 @@ class _KYCScreenState extends State<KYCScreen> {
                                       isSelected: individualSelected,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   GestureDetector(
@@ -202,7 +204,7 @@ class _KYCScreenState extends State<KYCScreen> {
                                       isSelected: soleProprietorshipSelected,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   GestureDetector(
@@ -227,7 +229,7 @@ class _KYCScreenState extends State<KYCScreen> {
                         ],
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                       child: SizedBox(),
                     ),
                     Stack(
@@ -243,8 +245,12 @@ class _KYCScreenState extends State<KYCScreen> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                             ),
-                            onPressed: () {},
-                            child: Text(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => KYCScreen2(),
+                              ));
+                            },
+                            child: const Text(
                               'Next',
                               style: TextStyle(
                                 fontSize: 16,
@@ -257,16 +263,17 @@ class _KYCScreenState extends State<KYCScreen> {
                                 soleProprietorshipSelected == false
                             ? Container(
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(66, 255, 255, 255),
+                                  color:
+                                      const Color.fromARGB(66, 255, 255, 255),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 height: 55,
                                 width: double.infinity,
                               )
-                            : SizedBox(),
+                            : const SizedBox(),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                   ],
@@ -300,7 +307,7 @@ class BusinessStructure extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 11,
-            backgroundColor: Color.fromARGB(
+            backgroundColor: const Color.fromARGB(
               255,
               207,
               205,
@@ -311,9 +318,9 @@ class BusinessStructure extends StatelessWidget {
                     radius: 6,
                     backgroundColor: ColorStyle.colorPrimary,
                   )
-                : SizedBox(),
+                : const SizedBox(),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Expanded(
@@ -322,17 +329,17 @@ class BusinessStructure extends StatelessWidget {
               children: [
                 Text(
                   businessStructureType,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
                   businessStructureTypeDescription,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w300,
                   ),

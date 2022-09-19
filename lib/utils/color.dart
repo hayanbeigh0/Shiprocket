@@ -7,4 +7,5 @@ class ColorStyle {
   static Color colorPrimaryExtraLight = const Color.fromARGB(6, 75, 33, 243);
   static Color colorPrimaryExtraLight100 =
       const Color.fromARGB(15, 75, 33, 243);
+  static Color borderGrey = const Color.fromARGB(57, 0, 0, 0);
 }

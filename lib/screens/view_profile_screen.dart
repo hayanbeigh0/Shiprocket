@@ -20,9 +20,9 @@ class _ViewProfileState extends State<ViewProfile> {
   };
   late Map<String, dynamic> newUserData;
   late CameraController controller;
-  final String screenTitleText = 'Profile';
   final ImagePicker _picker = ImagePicker();
   XFile? image = null;
+  final String screenTitleText = 'Profile';
   final Color primaryColor = const Color.fromARGB(255, 59, 9, 241);
   // bool editCompanyInfo = false;
 
