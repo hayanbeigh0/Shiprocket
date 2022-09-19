@@ -174,11 +174,9 @@ class _AdhaarVerificationState extends State<AdhaarVerification> {
                                         border: InputBorder.none,
                                       ),
                                       inputFormatters: <TextInputFormatter>[
-                                        // for below version 2 use this
                                         FilteringTextInputFormatter.allow(
                                           RegExp(r'[0-9]'),
                                         ),
-// for version 2 and greater youcan also use this
                                         FilteringTextInputFormatter.digitsOnly,
                                         LengthLimitingTextInputFormatter(12),
                                       ],
