@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiprocket/screens/kyc_screens/adhaar_verification.dart';
+import 'package:shiprocket/screens/kyc_screens/documents_verification.dart';
 
 import '../../utils/box_styles.dart';
 import '../../utils/color.dart';
@@ -262,7 +263,13 @@ class KYCScreen3 extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.of(context)
+                                            .push(MaterialPageRoute(
+                                          builder: (context) =>
+                                              DocumentVerification(),
+                                        ));
+                                      },
                                       child: Text(
                                         'Documents Verification',
                                         style: TextStyle(
