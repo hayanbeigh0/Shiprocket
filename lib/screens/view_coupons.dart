@@ -129,12 +129,15 @@ class ViewCoupons extends StatelessWidget {
                           horizontal: 8.0,
                           vertical: 10,
                         ),
-                        child: Text(
-                          'Apply',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                            color: ColorStyle.colorPrimary,
+                        child: GestureDetector(
+                          onTap: () => Navigator.of(context).pop(),
+                          child: Text(
+                            'Apply',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: ColorStyle.colorPrimary,
+                            ),
                           ),
                         ),
                       )

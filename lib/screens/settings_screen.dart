@@ -12,6 +12,7 @@ import 'package:shiprocket/screens/features_screen.dart';
 import 'package:shiprocket/screens/features_screen_2.dart';
 import 'package:shiprocket/screens/gst_invoicing_screen.dart';
 import 'package:shiprocket/screens/invoice_preferences.dart';
+import 'package:shiprocket/screens/kyc_screens/kyc_screen1.dart';
 import 'package:shiprocket/screens/notifications_screen.dart';
 import 'package:shiprocket/screens/shipping_label_preferences.dart';
 import 'package:shiprocket/screens/view_profile_screen.dart';
@@ -490,7 +491,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             segmentTitle: 'KYC',
                             segmentDescription:
                                 'Complete your kyc verification for seamless shipping',
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const KYCScreen1(),
+                              ));
+                            },
                           ),
                           SettingsScreenSegment(
                             icon: Icon(
@@ -556,38 +561,42 @@ class SettingsScreenSubSegment extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  subSegmentTitle,
-                  style: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
+      child: Container(
+        width: double.infinity,
+        color: Colors.transparent,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    subSegmentTitle,
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  subSegmentDescription,
-                  style: const TextStyle(
-                    fontSize: 13,
-                    color: Color.fromARGB(255, 87, 87, 87),
+                  const SizedBox(
+                    height: 5,
                   ),
-                ),
-              ],
+                  Text(
+                    subSegmentDescription,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: Color.fromARGB(255, 87, 87, 87),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Icon(
-            CupertinoIcons.chevron_right,
-            color: Color.fromARGB(255, 155, 154, 154),
-          ),
-        ],
+            const Icon(
+              CupertinoIcons.chevron_right,
+              color: Color.fromARGB(255, 155, 154, 154),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -619,87 +628,91 @@ class SettingsScreenSegment extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: onTap,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: const EdgeInsets.only(
-                top: 6,
+        child: Container(
+          width: double.infinity,
+          color: Colors.transparent,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(
+                  top: 6,
+                ),
+                width: 45,
+                child: icon,
               ),
-              width: 45,
-              child: icon,
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              segmentTitle,
-                              style: const TextStyle(
-                                fontSize: 15.5,
-                                fontWeight: FontWeight.w500,
-                                color: Color.fromARGB(255, 25, 25, 25),
+              const SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                segmentTitle,
+                                style: const TextStyle(
+                                  fontSize: 15.5,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color.fromARGB(255, 25, 25, 25),
+                                ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              segmentDescription,
-                              style: const TextStyle(
-                                fontSize: 13,
-                                color: Color.fromARGB(255, 87, 87, 87),
+                              const SizedBox(
+                                height: 5,
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Transform.translate(
-                        offset: const Offset(0, -10),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 4.0),
-                          child: Transform.rotate(
-                            angle: viewSubSegment ? -3.14 / 2 : 0,
-                            child: const SizedBox(
-                              height: 40,
-                              width: 40,
-                              child: Icon(
-                                CupertinoIcons.chevron_right,
-                                color: Colors.grey,
+                              Text(
+                                segmentDescription,
+                                style: const TextStyle(
+                                  fontSize: 13,
+                                  color: Color.fromARGB(255, 87, 87, 87),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  viewSubSegment
-                      ? Container(
-                          // height: 30,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(119, 215, 216, 246),
-                            borderRadius: BorderRadius.circular(4.0),
+                        Transform.translate(
+                          offset: const Offset(0, -10),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 4.0),
+                            child: Transform.rotate(
+                              angle: viewSubSegment ? -3.14 / 2 : 0,
+                              child: const SizedBox(
+                                height: 40,
+                                width: 40,
+                                child: Icon(
+                                  CupertinoIcons.chevron_right,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ),
                           ),
-                          margin: const EdgeInsets.only(
-                            top: 4,
-                            right: 5,
-                          ),
-                          child: subChild,
-                        )
-                      : const SizedBox(),
-                ],
+                        ),
+                      ],
+                    ),
+                    viewSubSegment
+                        ? Container(
+                            // height: 30,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(119, 215, 216, 246),
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                            margin: const EdgeInsets.only(
+                              top: 4,
+                              right: 5,
+                            ),
+                            child: subChild,
+                          )
+                        : const SizedBox(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
