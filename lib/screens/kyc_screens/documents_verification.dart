@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -256,11 +259,731 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                   SizedBox(
                                     height: 20,
                                   ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          // padding: const EdgeInsets.all(20.0),
+                                          child: imageFront == null
+                                              ? DottedBorder(
+                                                  color: ColorStyle.borderGrey,
+                                                  strokeWidth: 1.5,
+                                                  dashPattern: const [6],
+                                                  radius: Radius.circular(8.0),
+                                                  child: SizedBox(
+                                                    // width: double.infinity,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.15,
+                                                    child: Center(
+                                                      child: Container(
+                                                        margin: const EdgeInsets
+                                                            .all(
+                                                          14,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                            8.0,
+                                                          ),
+                                                          color: Colors
+                                                              .transparent,
+                                                        ),
+                                                        child: GestureDetector(
+                                                          onTap: () async {
+                                                            getCameraImage();
+                                                          },
+                                                          child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.image,
+                                                                color: ColorStyle
+                                                                    .colorPrimary,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 8,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 100,
+                                                                child: Text(
+                                                                  'Upload Image Front Side',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: ColorStyle
+                                                                        .colorPrimary,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : Center(
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Image.file(
+                                                        File(imageFront!.path),
+                                                        fit: BoxFit.cover,
+                                                        width: 100,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 30,
+                                                        height: 20,
+                                                        child: IconButton(
+                                                          onPressed: () {
+                                                            getCameraImage();
+                                                          },
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          icon: const Icon(
+                                                            Icons.edit,
+                                                          ),
+                                                          iconSize: 20,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 15,
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          // padding: const EdgeInsets.all(15.0),
+                                          child: imageFront == null
+                                              ? DottedBorder(
+                                                  color: ColorStyle.borderGrey,
+                                                  strokeWidth: 1.5,
+                                                  dashPattern: const [6],
+                                                  radius: Radius.circular(8.0),
+                                                  child: SizedBox(
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.15,
+                                                    child: Center(
+                                                      child: Container(
+                                                        margin: const EdgeInsets
+                                                            .all(
+                                                          10,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                            8.0,
+                                                          ),
+                                                          color: Colors
+                                                              .transparent,
+                                                        ),
+                                                        child: GestureDetector(
+                                                          onTap: () async {
+                                                            getCameraImage();
+                                                          },
+                                                          child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.image,
+                                                                color: ColorStyle
+                                                                    .colorPrimary,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 8,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 100,
+                                                                child: Text(
+                                                                  'Upload Image Back Side',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: ColorStyle
+                                                                        .colorPrimary,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : Center(
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Image.file(
+                                                        File(imageFront!.path),
+                                                        fit: BoxFit.cover,
+                                                        width: 100,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 30,
+                                                        height: 20,
+                                                        child: IconButton(
+                                                          onPressed: () {
+                                                            getCameraImage();
+                                                          },
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          icon: const Icon(
+                                                            Icons.edit,
+                                                          ),
+                                                          iconSize: 20,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 15.0,
+                                              horizontal: 24.0,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              side: BorderSide(
+                                                color: ColorStyle.colorPrimary,
+                                              ),
+                                            ),
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            'Submit Document 1',
+                                            style: TextStyle(
+                                              fontSize: 17.0,
+                                              fontWeight: FontWeight.w400,
+                                              color: ColorStyle.colorPrimary,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
                                 ],
                               ),
                             ),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Document 2',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(12.0),
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 10,
+                                    spreadRadius: 1,
+                                    color: Color.fromARGB(88, 158, 158, 158),
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Document Type',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: TextFormFieldContainer(
+                                      textForm: DropdownButtonFormField(
+                                        iconSize: 30,
+                                        icon: Transform.translate(
+                                          offset: const Offset(
+                                            0,
+                                            -15,
+                                          ),
+                                          child: const Icon(
+                                            Icons.keyboard_arrow_down,
+                                          ),
+                                        ),
+                                        decoration: const InputDecoration(
+                                          labelText: 'Select Document Type',
+                                          labelStyle: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 111, 111, 112),
+                                            fontSize: 14,
+                                          ),
+                                          border: InputBorder.none,
+                                        ),
+                                        items: items
+                                            .map(
+                                              (item) =>
+                                                  DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                            .toList(),
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Text(
+                                    'Document Images',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: Container(
+                                          // padding: const EdgeInsets.all(20.0),
+                                          child: imageFront == null
+                                              ? DottedBorder(
+                                                  color: ColorStyle.borderGrey,
+                                                  strokeWidth: 1.5,
+                                                  dashPattern: const [6],
+                                                  radius: Radius.circular(8.0),
+                                                  child: SizedBox(
+                                                    // width: double.infinity,
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.15,
+                                                    child: Center(
+                                                      child: Container(
+                                                        margin: const EdgeInsets
+                                                            .all(
+                                                          14,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                            8.0,
+                                                          ),
+                                                          color: Colors
+                                                              .transparent,
+                                                        ),
+                                                        child: GestureDetector(
+                                                          onTap: () async {
+                                                            getCameraImage();
+                                                          },
+                                                          child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.image,
+                                                                color: ColorStyle
+                                                                    .colorPrimary,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 8,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 100,
+                                                                child: Text(
+                                                                  'Upload Image Front Side',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: ColorStyle
+                                                                        .colorPrimary,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : Center(
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Image.file(
+                                                        File(imageFront!.path),
+                                                        fit: BoxFit.cover,
+                                                        width: 100,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 30,
+                                                        height: 20,
+                                                        child: IconButton(
+                                                          onPressed: () {
+                                                            getCameraImage();
+                                                          },
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          icon: const Icon(
+                                                            Icons.edit,
+                                                          ),
+                                                          iconSize: 20,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 15,
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          // padding: const EdgeInsets.all(15.0),
+                                          child: imageFront == null
+                                              ? DottedBorder(
+                                                  color: ColorStyle.borderGrey,
+                                                  strokeWidth: 1.5,
+                                                  dashPattern: const [6],
+                                                  radius: Radius.circular(8.0),
+                                                  child: SizedBox(
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height *
+                                                            0.15,
+                                                    child: Center(
+                                                      child: Container(
+                                                        margin: const EdgeInsets
+                                                            .all(
+                                                          10,
+                                                        ),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                            8.0,
+                                                          ),
+                                                          color: Colors
+                                                              .transparent,
+                                                        ),
+                                                        child: GestureDetector(
+                                                          onTap: () async {
+                                                            getCameraImage();
+                                                          },
+                                                          child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Icon(
+                                                                Icons.image,
+                                                                color: ColorStyle
+                                                                    .colorPrimary,
+                                                              ),
+                                                              SizedBox(
+                                                                height: 8,
+                                                              ),
+                                                              SizedBox(
+                                                                width: 100,
+                                                                child: Text(
+                                                                  'Upload Image Back Side',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: ColorStyle
+                                                                        .colorPrimary,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : Center(
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Image.file(
+                                                        File(imageFront!.path),
+                                                        fit: BoxFit.cover,
+                                                        width: 100,
+                                                      ),
+                                                      SizedBox(
+                                                        width: 30,
+                                                        height: 20,
+                                                        child: IconButton(
+                                                          onPressed: () {
+                                                            getCameraImage();
+                                                          },
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          icon: const Icon(
+                                                            Icons.edit,
+                                                          ),
+                                                          iconSize: 20,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                  ),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        TextButton(
+                                          style: TextButton.styleFrom(
+                                            disabledBackgroundColor:
+                                                Color.fromARGB(
+                                                    255, 235, 234, 234),
+                                            disabledForegroundColor:
+                                                Color.fromARGB(
+                                                    255, 184, 184, 184),
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 15.0,
+                                              horizontal: 24.0,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              side: BorderSide(
+                                                color: imageFront == null ||
+                                                        imageBack == null
+                                                    ? Colors.grey
+                                                    : ColorStyle.colorPrimary,
+                                              ),
+                                            ),
+                                          ),
+                                          onPressed:
+                                              imageFront == null ? null : () {},
+                                          child: Text(
+                                            'Submit Document 2',
+                                            style: TextStyle(
+                                              fontSize: 17.0,
+                                              fontWeight: FontWeight.w400,
+                                              color: imageFront == null
+                                                  ? Colors.grey
+                                                  : ColorStyle.colorPrimary,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(12.0),
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 10,
+                                    spreadRadius: 1,
+                                    color: Color.fromARGB(88, 158, 158, 158),
+                                  ),
+                                ],
+                              ),
+                              child: RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                  text:
+                                      'By clicking "Submit & Verify Documents" you agree to Shiprocket\'s KYC',
+                                  style: TextStyle(
+                                    fontSize: 13.5,
+                                    color: Colors.black,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: ' Terms & Conditions',
+                                      style: TextStyle(
+                                        fontSize: 13.5,
+                                        color: ColorStyle.colorPrimary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        height: 55,
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            disabledForegroundColor: Colors.white,
+                            disabledBackgroundColor: Colors.grey,
+                            elevation: 0,
+                            backgroundColor: ColorStyle.colorPrimary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          onPressed: imageFront == null || imageBack == null
+                              ? null
+                              : () {},
+                          child: Text(
+                            'Submit and Verify Documents',
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
                       ),
                     ],
                   ),
