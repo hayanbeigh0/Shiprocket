@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shiprocket/utils/color.dart';
 
+import '../screens/view_coupons.dart';
 import 'add_money.dart';
 
 class QuickRecharge extends StatefulWidget {
@@ -275,12 +276,19 @@ class _QuickRechargeState extends State<QuickRecharge> {
                             ),
                           ),
                           const Spacer(),
-                          Text(
-                            'View Coupons',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: colorPrimary,
-                              fontWeight: FontWeight.bold,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ViewCoupons(),
+                              ));
+                            },
+                            child: Text(
+                              'View Coupons',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: colorPrimary,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
