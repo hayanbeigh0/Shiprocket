@@ -10,6 +10,7 @@ import 'package:shiprocket/screens/dashboard_screen/weight_discrepancies.dart';
 import 'package:shiprocket/screens/faq_screen.dart';
 import 'package:shiprocket/screens/help_and_support_screen/help_and_support.dart';
 import 'package:shiprocket/screens/manifests_screen.dart';
+import 'package:shiprocket/screens/refer_and_earn.dart';
 import 'package:shiprocket/screens/settings_screen.dart';
 import 'package:shiprocket/screens/shiprocket_trainings.dart';
 import 'package:shiprocket/screens/view_profile_screen.dart';
@@ -516,9 +517,18 @@ class _MoreScreenState extends State<MoreScreen> {
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'Refer & Earn',
-              iconData: MyIcons.refer_and_earn,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ReferAndEarn(),
+              )),
+              child: Container(
+                color: Colors.transparent,
+                width: double.infinity,
+                child: const OptionListItem(
+                  itemName: 'Refer & Earn',
+                  iconData: MyIcons.refer_and_earn,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,

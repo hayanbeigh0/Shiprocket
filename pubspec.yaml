@@ -79,19 +79,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/shiprocketlogo.jpeg
-    - assets/controls.png
-    - assets/sadboxcopy.png
-    - assets/icons/apps.svg
-    - assets/order-processing.jpg
-    - assets/real-time-notifications.jpg
-    - assets/wider-coverage.jpg
-    - assets/business-analytics.jpg
-    - assets/empty-passbook.jpeg
-    - assets/no-customer.jpeg
-    - assets/no-record.png
-    - assets/no-weight-discrepancies.jpeg
-    - assets/no-invoices.PNG
+    - assets/
 
 
 
