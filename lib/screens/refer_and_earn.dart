@@ -83,7 +83,7 @@ class ReferAndEarn extends StatelessWidget {
                           Container(
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3,
                                   spreadRadius: 1,
@@ -95,18 +95,18 @@ class ReferAndEarn extends StatelessWidget {
                             width: double.infinity,
                             child: Image.asset('assets/invite-friends.PNG'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Container(
                             clipBehavior: Clip.antiAlias,
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 14,
                               vertical: 10,
                             ),
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 242, 243, 251),
-                              boxShadow: [
+                              color: const Color.fromARGB(255, 242, 243, 251),
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3,
                                   spreadRadius: 1,
@@ -119,13 +119,13 @@ class ReferAndEarn extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'How it works?',
                                   style: TextStyle(
                                     fontSize: 17,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Container(
@@ -133,9 +133,9 @@ class ReferAndEarn extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.white,
                                   ),
-                                  padding: EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   width: double.infinity,
-                                  child: Text(
+                                  child: const Text(
                                     '1. Share your referral code to invite your friends to Shiprocket.',
                                     style: TextStyle(
                                       fontSize: 16,
@@ -143,7 +143,7 @@ class ReferAndEarn extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Container(
@@ -151,9 +151,9 @@ class ReferAndEarn extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.white,
                                   ),
-                                  padding: EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   width: double.infinity,
-                                  child: Text(
+                                  child: const Text(
                                     '2. They successfully sign up & recharge on Shiprocket.',
                                     style: TextStyle(
                                       fontSize: 16,
@@ -161,7 +161,7 @@ class ReferAndEarn extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Container(
@@ -169,9 +169,9 @@ class ReferAndEarn extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.white,
                                   ),
-                                  padding: EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.all(10.0),
                                   width: double.infinity,
-                                  child: Text(
+                                  child: const Text(
                                     '3. On their successful recharge you both are credited with Rs 200 in vour Shiprocket wallets',
                                     style: TextStyle(
                                       fontSize: 16,
@@ -179,24 +179,24 @@ class ReferAndEarn extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 12,
                           ),
                           Container(
                             clipBehavior: Clip.antiAlias,
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 14,
                               vertical: 10,
                             ),
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 242, 243, 251),
-                              boxShadow: [
+                              color: const Color.fromARGB(255, 242, 243, 251),
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3,
                                   spreadRadius: 1,
@@ -209,28 +209,28 @@ class ReferAndEarn extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Your Referral Code:',
                                   style: TextStyle(
                                     fontSize: 17,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Row(
                                   children: [
                                     Expanded(
                                       child: DottedBorder(
-                                        dashPattern: [5],
+                                        dashPattern: const [5],
                                         strokeWidth: 2.3,
                                         color: ColorStyle.colorPrimary,
-                                        radius: Radius.circular(10),
-                                        padding: EdgeInsets.symmetric(
+                                        radius: const Radius.circular(10),
+                                        padding: const EdgeInsets.symmetric(
                                           horizontal: 20,
                                           vertical: 12,
                                         ),
-                                        child: Center(
+                                        child: const Center(
                                           child: Text(
                                             'REF1a05ch',
                                             style: TextStyle(
@@ -240,7 +240,7 @@ class ReferAndEarn extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 12,
                                     ),
                                     Expanded(
@@ -248,14 +248,14 @@ class ReferAndEarn extends StatelessWidget {
                                         style: ElevatedButton.styleFrom(
                                           backgroundColor:
                                               ColorStyle.colorPrimary,
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                             horizontal: 20,
                                             vertical: 11,
                                           ),
                                         ),
                                         onPressed: () {},
                                         child: Row(
-                                          children: [
+                                          children: const [
                                             Icon(
                                               Icons.copy,
                                             ),
@@ -274,24 +274,24 @@ class ReferAndEarn extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 12,
                           ),
                           Container(
                             clipBehavior: Clip.antiAlias,
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 14,
                               vertical: 10,
                             ),
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 242, 243, 251),
-                              boxShadow: [
+                              color: const Color.fromARGB(255, 242, 243, 251),
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3,
                                   spreadRadius: 1,
@@ -304,13 +304,13 @@ class ReferAndEarn extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Share Referral Code with friends',
                                   style: TextStyle(
                                     fontSize: 17,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Wrap(
@@ -322,7 +322,7 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
@@ -332,7 +332,7 @@ class ReferAndEarn extends StatelessWidget {
                                             materialTapTargetSize:
                                                 MaterialTapTargetSize
                                                     .shrinkWrap,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -346,10 +346,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Whatsapp',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -360,14 +360,14 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
                                           child: MaterialButton(
                                             padding: EdgeInsets.zero,
                                             height: 20,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -381,10 +381,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Gmail',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -395,14 +395,14 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
                                           child: MaterialButton(
                                             padding: EdgeInsets.zero,
                                             height: 20,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -416,10 +416,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Facebook',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -430,14 +430,14 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
                                           child: MaterialButton(
                                             padding: EdgeInsets.zero,
                                             height: 20,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -451,10 +451,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Message',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -465,14 +465,14 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
                                           child: MaterialButton(
                                             padding: EdgeInsets.zero,
                                             height: 20,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -486,10 +486,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Linkedin',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -500,14 +500,14 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
                                           child: MaterialButton(
                                             padding: EdgeInsets.zero,
                                             height: 20,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -521,10 +521,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Twitter',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -535,14 +535,14 @@ class ReferAndEarn extends StatelessWidget {
                                     Column(
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
+                                          margin: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                           ),
                                           width: 60,
                                           child: MaterialButton(
                                             padding: EdgeInsets.zero,
                                             height: 20,
-                                            shape: CircleBorder(
+                                            shape: const CircleBorder(
                                               side: BorderSide(
                                                 color: Colors.grey,
                                               ),
@@ -556,10 +556,10 @@ class ReferAndEarn extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 9,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Other',
                                           style: TextStyle(
                                             fontSize: 13,
@@ -569,18 +569,18 @@ class ReferAndEarn extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: Text(
+                            child: const Text(
                               'Terms & Conditions',
                               style: TextStyle(
                                 fontSize: 18,
@@ -588,7 +588,7 @@ class ReferAndEarn extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 40,
                           ),
                         ],

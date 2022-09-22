@@ -13,6 +13,7 @@ import 'package:shiprocket/screens/manifests_screen.dart';
 import 'package:shiprocket/screens/refer_and_earn.dart';
 import 'package:shiprocket/screens/settings_screen.dart';
 import 'package:shiprocket/screens/shiprocket_trainings.dart';
+import 'package:shiprocket/screens/upgrade_plan.dart';
 import 'package:shiprocket/screens/view_profile_screen.dart';
 import 'package:shiprocket/screens/wallet_and_passbook_screen.dart/wallet_passbook_tab.dart';
 import 'package:shiprocket/screens/weight_discrepancy.dart';
@@ -533,9 +534,20 @@ class _MoreScreenState extends State<MoreScreen> {
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'Upgrade Plan',
-              iconData: MyIcons.upgrade_plan,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => UpgradePlan(),
+                ));
+              },
+              child: Container(
+                color: Colors.transparent,
+                width: double.infinity,
+                child: const OptionListItem(
+                  itemName: 'Upgrade Plan',
+                  iconData: MyIcons.upgrade_plan,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,
