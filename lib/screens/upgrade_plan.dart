@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiprocket/utils/color.dart';
 import 'package:shiprocket/widgets/common_top_bar.dart';
 
 class UpgradePlan extends StatelessWidget {
@@ -9,8 +10,8 @@ class UpgradePlan extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          CommonTopBar(title: 'Upgrade Plans'),
-          SizedBox(
+          const CommonTopBar(title: 'Upgrade Plans'),
+          const SizedBox(
             height: 15,
           ),
           Expanded(
@@ -42,7 +43,7 @@ class UpgradePlan extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6),
                       color: Colors.white,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 3,
                           spreadRadius: 1,
@@ -78,6 +79,43 @@ class UpgradePlan extends StatelessWidget {
                         ],
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(6),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 2,
+                              spreadRadius: 1,
+                              color: Color.fromARGB(255, 221, 220, 220),
+                              offset: Offset(0, 3)),
+                        ],
+                      ),
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(6),
+                                topRight: Radius.circular(6),
+                              ),
+                              color: ColorStyle.colorPrimary,
+                            ),
+                            width: double.infinity,
+                            height: 55,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
                   ),
                 ],
               ),

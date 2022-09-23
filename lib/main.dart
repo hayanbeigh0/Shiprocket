@@ -16,6 +16,7 @@ import 'package:shiprocket/screens/more_screen.dart';
 import 'package:shiprocket/screens/notifications_screen.dart';
 import 'package:shiprocket/screens/settings_screen.dart';
 import 'package:shiprocket/screens/shiprocket_trainings.dart';
+import 'package:shiprocket/screens/upgrade_plan.dart';
 import 'package:shiprocket/screens/view_profile_screen.dart';
 import 'package:shiprocket/screens/wallet_and_passbook_screen.dart/wallet_passbook_tab.dart';
 import 'package:shiprocket/screens/welcome_screen.dart';
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: BottomNavigation(),
+        home: UpgradePlan(),
       ),
     );
   }
