@@ -1,9 +1,31 @@
-import 'package:flutter/material.dart';
-import 'package:shiprocket/utils/color.dart';
-import 'package:shiprocket/widgets/common_top_bar.dart';
+import 'dart:async';
 
-class UpgradePlan extends StatelessWidget {
-  const UpgradePlan({super.key});
+import 'package:flutter/material.dart';
+import 'package:sticky_headers/sticky_headers.dart';
+import '/utils/color.dart';
+import '/widgets/common_top_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+class UpgradePlan extends StatefulWidget {
+  UpgradePlan({super.key});
+
+  @override
+  State<UpgradePlan> createState() => _UpgradePlanState();
+}
+
+class _UpgradePlanState extends State<UpgradePlan> {
+  final ScrollController scrollController = ScrollController();
+
+  final ScrollController scrollHeaderController = ScrollController();
+
+  final StreamController<double> scrollPosition = StreamController();
+
+  final StreamController<double> scrollHeaderPosition = StreamController();
+  double offset = 0.0;
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +131,126 @@ class UpgradePlan extends StatelessWidget {
                             ),
                             width: double.infinity,
                             height: 55,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.telegram,
+                                  color: Colors.white,
+                                  size: 36,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'LITE',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      'FREE',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          StreamBuilder<double>(
+                            initialData: 0.0,
+                            stream: scrollPosition.stream,
+                            builder: (context, snapshot) {
+                              return Expanded(
+                                child: Stack(
+                                  children: [
+                                    StreamBuilder<double>(
+                                      initialData: 0.0,
+                                      stream: scrollHeaderPosition.stream,
+                                      builder: (context, snapshot) {
+                                        return Container(
+                                          height: 20,
+                                          color: snapshot.data != 0.0
+                                              ? Colors.blue
+                                              : Colors.transparent,
+                                        );
+                                      },
+                                    ),
+                                    ListView.builder(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 10,
+                                      ),
+                                      controller: scrollController,
+                                      itemCount: 6,
+                                      itemBuilder: (context, index) {
+                                        scrollController.addListener(
+                                          () => scrollHeaderPosition
+                                              .add(scrollController.offset),
+                                        );
+                                        return StickyHeaderBuilder(
+                                          overlapHeaders: false,
+                                          builder: (context, stuckAmount) {
+                                            return Container(
+                                              // color:
+                                              //     scrollController.offset == 0.0
+                                              //         ? Colors.transparent
+                                              //         : Colors.blue,
+                                              child: Text(
+                                                  'GENERAL FEATURES $index'),
+                                            );
+                                          },
+                                          content: ListView(
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 10,
+                                            ),
+                                            scrollDirection: Axis.vertical,
+                                            shrinkWrap: true,
+                                            children: [
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                              Text('hello'),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -122,6 +264,11 @@ class UpgradePlan extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print(scrollController.offset);
+        },
       ),
     );
   }
