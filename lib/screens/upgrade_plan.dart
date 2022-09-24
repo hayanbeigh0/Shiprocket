@@ -14,13 +14,23 @@ class UpgradePlan extends StatefulWidget {
 }
 
 class _UpgradePlanState extends State<UpgradePlan> {
+  List<String> list = [
+    'GENERAL FEATURES',
+    'SHIPPING TOOLS AND FEATURES',
+    'SHIPPING TOOLS AND tool',
+    'SHIPPING TOOLS AND FEATURES',
+    'SHIPPING TOOLS AND FEATURES',
+    'SHIPPING TOOLS AND FEATURES',
+  ];
   final ScrollController scrollController = ScrollController();
 
   final ScrollController scrollHeaderController = ScrollController();
 
   final StreamController<double> scrollPosition = StreamController();
 
-  final StreamController<double> scrollHeaderPosition = StreamController();
+  final StreamController<double> scrollHeaderPosition =
+      StreamController.broadcast();
+  GlobalKey itemKey = GlobalKey();
   double offset = 0.0;
   @override
   void initState() {
@@ -171,84 +181,92 @@ class _UpgradePlanState extends State<UpgradePlan> {
                           SizedBox(
                             height: 15,
                           ),
+                          // use sticky headers to just get the text and then put that text into a stream controller and then use that stream controller to display the text on the screen.
                           StreamBuilder<double>(
                             initialData: 0.0,
                             stream: scrollPosition.stream,
                             builder: (context, snapshot) {
                               return Expanded(
-                                child: Stack(
-                                  children: [
-                                    StreamBuilder<double>(
-                                      initialData: 0.0,
-                                      stream: scrollHeaderPosition.stream,
-                                      builder: (context, snapshot) {
-                                        return Container(
-                                          height: 20,
-                                          color: snapshot.data != 0.0
-                                              ? Colors.blue
-                                              : Colors.transparent,
-                                        );
-                                      },
-                                    ),
-                                    ListView.builder(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: 10,
-                                      ),
-                                      controller: scrollController,
-                                      itemCount: 6,
-                                      itemBuilder: (context, index) {
-                                        scrollController.addListener(
-                                          () => scrollHeaderPosition
-                                              .add(scrollController.offset),
-                                        );
-                                        return StickyHeaderBuilder(
-                                          overlapHeaders: false,
-                                          builder: (context, stuckAmount) {
-                                            return Container(
-                                              // color:
-                                              //     scrollController.offset == 0.0
-                                              //         ? Colors.transparent
-                                              //         : Colors.blue,
-                                              child: Text(
-                                                  'GENERAL FEATURES $index'),
-                                            );
-                                          },
-                                          content: ListView(
-                                            padding: EdgeInsets.symmetric(
-                                              vertical: 10,
-                                            ),
+                                child: StreamBuilder<double>(
+                                    initialData: 0.0,
+                                    stream: scrollHeaderPosition.stream,
+                                    builder: (context, snapshot) {
+                                      return Stack(
+                                        children: [
+                                          Container(
+                                            height: 20,
+                                            color: snapshot.data != 0.0
+                                                ? Colors.blue
+                                                : Colors.transparent,
+                                          ),
+                                          ListView.builder(
+                                            key: itemKey,
                                             scrollDirection: Axis.vertical,
                                             shrinkWrap: true,
-                                            children: [
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                              Text('hello'),
-                                            ],
+                                            padding: const EdgeInsets.symmetric(
+                                              vertical: 10,
+                                            ),
+                                            controller: scrollController,
+                                            itemCount: 6,
+                                            itemBuilder: (context, index) {
+                                              scrollController.addListener(() {
+                                                print(offset);
+                                                scrollHeaderPosition.add(
+                                                    scrollController.offset);
+                                              });
+                                              return StickyHeaderBuilder(
+                                                builder:
+                                                    (context, stuckAmount) {
+                                                  return Text(
+                                                      list[index].toString());
+                                                },
+                                                content: ListView(
+                                                  physics:
+                                                      const NeverScrollableScrollPhysics(),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                    vertical: 10,
+                                                  ),
+                                                  scrollDirection:
+                                                      Axis.vertical,
+                                                  shrinkWrap: true,
+                                                  children: [
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                    Text('hello'),
+                                                  ],
+                                                ),
+                                              );
+                                            },
                                           ),
-                                        );
-                                      },
-                                    ),
-                                  ],
-                                ),
+                                          // Container(
+                                          //   height: 20,
+                                          //   color: snapshot.data != 0.0
+                                          //       ? Colors.blue
+                                          //       : Colors.transparent,
+                                          // ),
+                                        ],
+                                      );
+                                    }),
                               );
                             },
                           ),
