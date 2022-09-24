@@ -104,10 +104,10 @@ class _UpgradePlanState extends State<UpgradePlan> {
       StreamController.broadcast();
   GlobalKey itemKey = GlobalKey();
   double offset = 0.0;
-  final generalFeatureList = [];
-  final shippingToolFeatureList = [];
-  final channelsAndInventoryManagementList = [];
-  final accountingAndReconciliationList = [];
+  var generalFeatureList = [];
+  var shippingToolFeatureList = [];
+  var channelsAndInventoryManagementList = [];
+  var accountingAndReconciliationList = [];
   @override
   void initState() {
     addToGeneralFeatureList();
@@ -118,11 +118,13 @@ class _UpgradePlanState extends State<UpgradePlan> {
   }
 
   void addToGeneralFeatureList() {
-    elements.map((e) {
+    for (var e in elements) {
       if (e['group'] == 'General Features') {
+        print(e['group']);
         generalFeatureList.add(e);
       }
-    });
+      // print(generalFeatureList.length);
+    }
   }
 
   void addToShippingToolFeatureList() {
@@ -366,27 +368,37 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                             )
                                             .toList()
                                             .length,
-                                        itemBuilder: (context, index) {
+                                        itemBuilder: (context, i) {
+                                          print(generalFeatureList.length);
+                                          print(shippingToolFeatureList.length);
                                           print(
-                                            elements
-                                                .where(
-                                                  (element) =>
-                                                      element['group'] ==
-                                                      planCategoryList[index]
-                                                          .toString(),
-                                                )
-                                                .length,
-                                          );
-                                          final list = elements
-                                              .where(
-                                                (e) =>
-                                                    e['group'] ==
-                                                    planCategoryList[index],
-                                              )
-                                              .toList();
-                                          return Text(
-                                            list[index]['item'].toString(),
-                                          );
+                                              channelsAndInventoryManagementList
+                                                  .length);
+                                          print(accountingAndReconciliationList
+                                              .length);
+                                          if (index == 0) {
+                                            return Text(
+                                              generalFeatureList[i]['item']
+                                                  .toString(),
+                                            );
+                                          } else if (index == 1) {
+                                            return Text(
+                                              shippingToolFeatureList[i]['item']
+                                                  .toString(),
+                                            );
+                                          } else if (index == 2) {
+                                            return Text(
+                                              channelsAndInventoryManagementList[
+                                                      i]['item']
+                                                  .toString(),
+                                            );
+                                          } else {
+                                            return Text(
+                                              accountingAndReconciliationList[i]
+                                                      ['item']
+                                                  .toString(),
+                                            );
+                                          }
                                         },
                                       ),
                                     );
