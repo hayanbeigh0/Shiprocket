@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:grouped_list/grouped_list.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import '/utils/color.dart';
 import '/widgets/common_top_bar.dart';
@@ -14,14 +15,84 @@ class UpgradePlan extends StatefulWidget {
 }
 
 class _UpgradePlanState extends State<UpgradePlan> {
-  List<String> list = [
+  List<String> planCategoryList = [
     'GENERAL FEATURES',
-    'SHIPPING TOOLS AND FEATURES',
-    'SHIPPING TOOLS AND tool',
-    'SHIPPING TOOLS AND FEATURES',
-    'SHIPPING TOOLS AND FEATURES',
-    'SHIPPING TOOLS AND FEATURES',
+    'Shipping Tools & Features',
+    'Channel & Inventory Management',
+    'Accounting & Reconciliaiton',
   ];
+  final elements = [
+    {'group': 'General Features', 'item': 'No Minimum Sign Up Period'},
+    {'group': 'General Features', 'item': 'Shipping Starts at Rs. 29/500 gms'},
+    {'group': 'General Features', 'item': '1 User Account'},
+    {'group': 'General Features', 'item': 'Unlimited Orders'},
+    {'group': 'General Features', 'item': 'All 15 Courier Integrations'},
+    {'group': 'General Features', 'item': 'Surface Logistics Partners'},
+    {'group': 'General Features', 'item': 'Sales Channel Integration'},
+    {'group': 'General Features', 'item': 'No Access to API'},
+    {'group': 'General Features', 'item': 'Chat. Call. Email Support'},
+    {'group': 'General Features', 'item': 'Training & Setup Assistance'},
+    {'group': 'General Features', 'item': 'No International Shipping'},
+    {
+      'group': 'Shipping Tools & Features',
+      'item': 'CORE - Courier Recommendation Engine'
+    },
+    {'group': 'Shipping Tools & Features', 'item': 'Live Rate Calculator'},
+    {'group': 'Shipping Tools & Features', 'item': 'NDR Management'},
+    {'group': 'Shipping Tools & Features', 'item': 'NDRIVR Calling'},
+    {
+      'group': 'Shipping Tools & Features',
+      'item': 'Post Shin - Branded Tracking Page'
+    },
+    {
+      'group': 'Shipping Tools & Features',
+      'item': 'Weiaht Discrepancy Management'
+    },
+    {'group': 'Shipping Tools & Features', 'item': 'No NDR Call Centre'},
+    {'group': 'Shipping Tools & Features', 'item': 'Early COD'},
+    {'group': 'Shipping Tools & Features', 'item': 'Postpaid'},
+    {
+      'group': 'Shipping Tools & Features',
+      'item': 'Automated Shipment Tracking'
+    },
+    {
+      'group': 'Shipping Tools & Features',
+      'item': 'Automated Email/SMS Notification'
+    },
+    {'group': 'Shipping Tools & Features', 'item': 'Manifest & Labels'},
+    {'group': 'Shipping Tools & Features', 'item': 'Customized Packing Slips'},
+    {'group': 'Shipping Tools & Features', 'item': 'Reporting & Passbook'},
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'No Catalog Management'
+    },
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'No Bulk Stock & Catalog Import'
+    },
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'No Multi Channel Price Sync'
+    },
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'No Multi Channel Inventory Sync'
+    },
+    {'group': 'Channels & Inventory Management', 'item': 'Catalog Sync'},
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'No Multi Auto Sync Channel Orders'
+    },
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'Real-Time Billing Management'
+    },
+    {
+      'group': 'Channels & Inventory Management',
+      'item': 'COD Reconciliation, Reporting & Settlement'
+    },
+  ];
+
   final ScrollController scrollController = ScrollController();
 
   final ScrollController scrollHeaderController = ScrollController();
@@ -192,10 +263,11 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                   scrollDirection: Axis.vertical,
                                   shrinkWrap: true,
                                   padding: const EdgeInsets.symmetric(
+                                    vertical: 10,
                                     horizontal: 15,
                                   ),
                                   controller: scrollController,
-                                  itemCount: 6,
+                                  itemCount: planCategoryList.length,
                                   itemBuilder: (context, index) {
                                     scrollController.addListener(
                                       () {
@@ -207,7 +279,8 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                     return StickyHeaderBuilder(
                                       overlapHeaders: false,
                                       builder: (context, stuckAmount) {
-                                        print(list[index].toString());
+                                        print(
+                                            planCategoryList[index].toString());
                                         // string.add(list[index].toString());
                                         return Container(
                                           padding: EdgeInsets.all(5),
@@ -222,7 +295,8 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                                     MainAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    list[index].toString(),
+                                                    planCategoryList[index]
+                                                        .toString(),
                                                     style: TextStyle(
                                                       fontSize: 16,
                                                       fontWeight:
@@ -238,38 +312,22 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                           ),
                                         );
                                       },
-                                      content: ListView(
+                                      content: GroupedListView<dynamic, String>(
+                                        elements: elements,
+                                        groupBy: (element) => element['group'],
+                                        groupSeparatorBuilder: (value) =>
+                                            SizedBox(
+                                          child: Text(value),
+                                        ),
+                                        itemBuilder: (context, element) =>
+                                            Text(element['item']),
                                         physics:
                                             const NeverScrollableScrollPhysics(),
                                         padding: const EdgeInsets.symmetric(
-                                          vertical: 20,
+                                          vertical: 10,
                                         ),
                                         scrollDirection: Axis.vertical,
                                         shrinkWrap: true,
-                                        children: [
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                          Text('hello'),
-                                        ],
                                       ),
                                     );
                                   },

@@ -51,6 +51,7 @@ dependencies:
   table_calendar: ^3.0.7
   font_awesome_flutter: ^10.2.1
   sticky_headers: "^0.3.0"
+  grouped_list: ^5.1.2
 
 
 
