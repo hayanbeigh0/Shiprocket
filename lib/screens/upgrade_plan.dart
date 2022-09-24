@@ -16,9 +16,9 @@ class UpgradePlan extends StatefulWidget {
 
 class _UpgradePlanState extends State<UpgradePlan> {
   List<String> planCategoryList = [
-    'GENERAL FEATURES',
+    'General Features',
     'Shipping Tools & Features',
-    'Channel & Inventory Management',
+    'Channels & Inventory Management',
     'Accounting & Reconciliaiton',
   ];
   final elements = [
@@ -42,7 +42,7 @@ class _UpgradePlanState extends State<UpgradePlan> {
     {'group': 'Shipping Tools & Features', 'item': 'NDRIVR Calling'},
     {
       'group': 'Shipping Tools & Features',
-      'item': 'Post Shin - Branded Tracking Page'
+      'item': 'Post Ship - Branded Tracking Page'
     },
     {
       'group': 'Shipping Tools & Features',
@@ -84,11 +84,11 @@ class _UpgradePlanState extends State<UpgradePlan> {
       'item': 'No Multi Auto Sync Channel Orders'
     },
     {
-      'group': 'Channels & Inventory Management',
+      'group': 'Accounting & Reconciliaiton',
       'item': 'Real-Time Billing Management'
     },
     {
-      'group': 'Channels & Inventory Management',
+      'group': 'Accounting & Reconciliaiton',
       'item': 'COD Reconciliation, Reporting & Settlement'
     },
   ];
@@ -104,9 +104,49 @@ class _UpgradePlanState extends State<UpgradePlan> {
       StreamController.broadcast();
   GlobalKey itemKey = GlobalKey();
   double offset = 0.0;
+  final generalFeatureList = [];
+  final shippingToolFeatureList = [];
+  final channelsAndInventoryManagementList = [];
+  final accountingAndReconciliationList = [];
   @override
   void initState() {
+    addToGeneralFeatureList();
+    addToShippingToolFeatureList();
+    addToChannelAndInventoryManagementList();
+    addToAccountingAndReconciliationList();
     super.initState();
+  }
+
+  void addToGeneralFeatureList() {
+    elements.map((e) {
+      if (e['group'] == 'General Features') {
+        generalFeatureList.add(e);
+      }
+    });
+  }
+
+  void addToShippingToolFeatureList() {
+    elements.map((e) {
+      if (e['group'] == 'Shipping Tools & Features') {
+        shippingToolFeatureList.add(e);
+      }
+    });
+  }
+
+  void addToChannelAndInventoryManagementList() {
+    elements.map((e) {
+      if (e['group'] == 'Channels & Inventory Management') {
+        channelsAndInventoryManagementList.add(e);
+      }
+    });
+  }
+
+  void addToAccountingAndReconciliationList() {
+    elements.map((e) {
+      if (e['group'] == 'Accounting & Reconciliaiton') {
+        accountingAndReconciliationList.add(e);
+      }
+    });
   }
 
   @override
@@ -279,9 +319,6 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                     return StickyHeaderBuilder(
                                       overlapHeaders: false,
                                       builder: (context, stuckAmount) {
-                                        print(
-                                            planCategoryList[index].toString());
-                                        // string.add(list[index].toString());
                                         return Container(
                                           padding: EdgeInsets.all(5),
                                           // height: 20,
@@ -312,22 +349,45 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                           ),
                                         );
                                       },
-                                      content: GroupedListView<dynamic, String>(
-                                        elements: elements,
-                                        groupBy: (element) => element['group'],
-                                        groupSeparatorBuilder: (value) =>
-                                            SizedBox(
-                                          child: Text(value),
-                                        ),
-                                        itemBuilder: (context, element) =>
-                                            Text(element['item']),
+                                      content: ListView.builder(
                                         physics:
                                             const NeverScrollableScrollPhysics(),
-                                        padding: const EdgeInsets.symmetric(
+                                        padding: EdgeInsets.symmetric(
                                           vertical: 10,
                                         ),
                                         scrollDirection: Axis.vertical,
                                         shrinkWrap: true,
+                                        itemCount: elements
+                                            .where(
+                                              (element) =>
+                                                  element['group'] ==
+                                                  planCategoryList[index]
+                                                      .toString(),
+                                            )
+                                            .toList()
+                                            .length,
+                                        itemBuilder: (context, index) {
+                                          print(
+                                            elements
+                                                .where(
+                                                  (element) =>
+                                                      element['group'] ==
+                                                      planCategoryList[index]
+                                                          .toString(),
+                                                )
+                                                .length,
+                                          );
+                                          final list = elements
+                                              .where(
+                                                (e) =>
+                                                    e['group'] ==
+                                                    planCategoryList[index],
+                                              )
+                                              .toList();
+                                          return Text(
+                                            list[index]['item'].toString(),
+                                          );
+                                        },
                                       ),
                                     );
                                   },
