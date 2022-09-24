@@ -351,7 +351,12 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                           ),
                                         );
                                       },
-                                      content: ListView.builder(
+                                      content: GroupedListView<dynamic, String>(
+                                        elements: elements.toList(),
+                                        groupBy: (element) => element['group'],
+                                        groupSeparatorBuilder: (value) {
+                                          return Text(value);
+                                        },
                                         physics:
                                             const NeverScrollableScrollPhysics(),
                                         padding: EdgeInsets.symmetric(
@@ -359,46 +364,8 @@ class _UpgradePlanState extends State<UpgradePlan> {
                                         ),
                                         scrollDirection: Axis.vertical,
                                         shrinkWrap: true,
-                                        itemCount: elements
-                                            .where(
-                                              (element) =>
-                                                  element['group'] ==
-                                                  planCategoryList[index]
-                                                      .toString(),
-                                            )
-                                            .toList()
-                                            .length,
-                                        itemBuilder: (context, i) {
-                                          print(generalFeatureList.length);
-                                          print(shippingToolFeatureList.length);
-                                          print(
-                                              channelsAndInventoryManagementList
-                                                  .length);
-                                          print(accountingAndReconciliationList
-                                              .length);
-                                          if (index == 0) {
-                                            return Text(
-                                              generalFeatureList[i]['item']
-                                                  .toString(),
-                                            );
-                                          } else if (index == 1) {
-                                            return Text(
-                                              shippingToolFeatureList[i]['item']
-                                                  .toString(),
-                                            );
-                                          } else if (index == 2) {
-                                            return Text(
-                                              channelsAndInventoryManagementList[
-                                                      i]['item']
-                                                  .toString(),
-                                            );
-                                          } else {
-                                            return Text(
-                                              accountingAndReconciliationList[i]
-                                                      ['item']
-                                                  .toString(),
-                                            );
-                                          }
+                                        itemBuilder: (context, element) {
+                                          return Text(element['item']);
                                         },
                                       ),
                                     );
