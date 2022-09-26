@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shiprocket/my_icons_icons.dart';
+import 'package:shiprocket/screens/about_shiprocket.dart';
 import 'package:shiprocket/screens/channel_integrations/integrate_other_channels.dart';
 import 'package:shiprocket/screens/channel_integrations/integrate_with_shopify.dart';
 import 'package:shiprocket/screens/cod_remmitance.dart';
@@ -614,9 +615,20 @@ class _MoreScreenState extends State<MoreScreen> {
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'About Shiprocket',
-              iconData: Icons.info_outline,
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => AboutShiprocket(),
+                ),
+              ),
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'About Shiprocket',
+                  iconData: Icons.info_outline,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,

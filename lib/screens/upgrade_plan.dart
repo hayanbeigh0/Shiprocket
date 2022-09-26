@@ -122,7 +122,6 @@ class _UpgradePlanState extends State<UpgradePlan> {
   void addToGeneralFeatureList() {
     for (var e in elements) {
       if (e['group'] == 'General Features') {
-        print(e['group']);
         generalFeatureList.add(e);
       }
       // print(generalFeatureList.length);
@@ -203,7 +202,7 @@ class _UpgradePlanState extends State<UpgradePlan> {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text(
                             'Plans We Offers!',
                             style: TextStyle(
@@ -228,7 +227,7 @@ class _UpgradePlanState extends State<UpgradePlan> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Expanded(
@@ -271,7 +270,7 @@ class _UpgradePlanState extends State<UpgradePlan> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                 ],
@@ -306,7 +305,7 @@ class ShiprocketPlan extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(6),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             blurRadius: 2,
             spreadRadius: 1,
@@ -320,7 +319,7 @@ class ShiprocketPlan extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(6),
                 topRight: Radius.circular(6),
               ),
@@ -330,7 +329,7 @@ class ShiprocketPlan extends StatelessWidget {
             height: 55,
             child: Row(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 FaIcon(
@@ -338,7 +337,7 @@ class ShiprocketPlan extends StatelessWidget {
                   color: Colors.white,
                   size: 36,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 Column(
@@ -347,7 +346,7 @@ class ShiprocketPlan extends StatelessWidget {
                   children: [
                     Text(
                       planName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -355,7 +354,7 @@ class ShiprocketPlan extends StatelessWidget {
                     ),
                     Text(
                       planCost,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -366,7 +365,7 @@ class ShiprocketPlan extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           // use sticky headers to just get the text and then put that text into a stream controller and then use that stream controller to display the text on the screen.
@@ -409,39 +408,35 @@ class ShiprocketPlan extends StatelessWidget {
                         groupBy: (element) => element['group'],
                         groupSeparatorBuilder: (value) {
                           return Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(7),
+                            // margin: EdgeInsets.symmetric(
+                            //   horizontal: 10,
+                            // ),
                             // height: 20,
                             color: Colors.white,
-                            child: Column(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0,
-                                      ),
-                                      child: Text(
-                                        value,
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                            color:
-                                                Color.fromARGB(194, 0, 0, 0)),
-                                      ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0,
+                                  ),
+                                  child: Text(
+                                    value,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color.fromARGB(194, 0, 0, 0),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                                SizedBox(
-                                  height: 10,
-                                )
                               ],
                             ),
                           );
                         },
                         physics: const NeverScrollableScrollPhysics(),
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           vertical: 0,
                         ),
                         scrollDirection: Axis.vertical,
@@ -459,26 +454,26 @@ class ShiprocketPlan extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
-                                  Icon(
+                                  const Icon(
                                     CupertinoIcons.chevron_right,
                                     size: 15,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Text(
                                     element['item'],
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.w300,
                                       fontSize: 15,
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                             ],
@@ -516,7 +511,7 @@ class ShiprocketPlan extends StatelessWidget {
                   right: 0,
                   bottom: 0,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(6),
                         bottomRight: Radius.circular(6),
@@ -524,7 +519,7 @@ class ShiprocketPlan extends StatelessWidget {
                       color: Colors.white,
                     ),
                     width: double.infinity,
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: Center(
                       child: SizedBox(
                         height: 40,
@@ -538,7 +533,7 @@ class ShiprocketPlan extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             'Activate Plan',
                             style: TextStyle(
                               fontSize: 18,
