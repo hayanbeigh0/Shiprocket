@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:sticky_grouped_list/sticky_grouped_list.dart';
@@ -231,188 +232,43 @@ class _UpgradePlanState extends State<UpgradePlan> {
                     height: 20,
                   ),
                   Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(6),
-                        boxShadow: [
-                          BoxShadow(
-                              blurRadius: 2,
-                              spreadRadius: 1,
-                              color: Color.fromARGB(255, 221, 220, 220),
-                              offset: Offset(0, 3)),
-                        ],
-                      ),
-                      width: double.infinity,
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(6),
-                                topRight: Radius.circular(6),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: PageView(
+                            children: [
+                              ShiprocketPlan(
+                                scrollController: scrollController,
+                                elements: elements,
+                                planCost: 'FREE',
+                                planName: 'LITE',
+                                icon: FontAwesomeIcons.telegram,
                               ),
-                              color: ColorStyle.colorPrimary,
-                            ),
-                            width: double.infinity,
-                            height: 55,
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                FaIcon(
-                                  FontAwesomeIcons.telegram,
-                                  color: Colors.white,
-                                  size: 36,
-                                ),
-                                SizedBox(
-                                  width: 15,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'LITE',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Text(
-                                      'FREE',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          // use sticky headers to just get the text and then put that text into a stream controller and then use that stream controller to display the text on the screen.
-
-                          Expanded(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  // ListView.builder(
-                                  //   key: itemKey,
-                                  //   scrollDirection: Axis.vertical,
-                                  //   shrinkWrap: true,
-                                  //   padding: const EdgeInsets.symmetric(
-                                  //     vertical: 10,
-                                  //     horizontal: 15,
-                                  //   ),
-                                  //   itemCount: planCategoryList.length,
-                                  //   controller: scrollController,
-                                  //   itemBuilder: (context, index) {
-                                  //     scrollController.addListener(
-                                  //       () {
-                                  //         // print(scrollController.offset);
-                                  //         scrollPosition
-                                  //             .add(scrollController.offset);
-                                  //       },
-                                  //     );
-                                  // return
-                                  GroupedListView<dynamic, String>(
-                                    controller: scrollController,
-                                    useStickyGroupSeparators: true,
-                                    floatingHeader: false,
-                                    // groupHeaderBuilder: (element) =>
-                                    //     Text(element['group']),
-                                    // controller: scrollController,
-                                    // floatingHeader: true,
-                                    // stickyHeaderBackgroundColor: Colors.blue,
-                                    elements: elements,
-                                    groupBy: (element) => element['group'],
-                                    groupSeparatorBuilder: (value) {
-                                      return Container(
-                                        padding: EdgeInsets.all(5),
-                                        // height: 20,
-                                        color: Colors.white,
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  value,
-                                                  style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            )
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 10,
-                                    ),
-                                    scrollDirection: Axis.vertical,
-                                    shrinkWrap: true,
-
-                                    itemBuilder: (context, element) {
-                                      // scrollController.addListener(
-                                      //   () {
-                                      //     // print(scrollController.offset);
-                                      //     scrollPosition
-                                      //         .add(scrollController.offset);
-                                      //   },
-                                      // );
-                                      return Text(
-                                        element['item'],
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  //   },
-                                  // ),
-                                  // StreamBuilder<double>(
-                                  //   initialData: 0.0,
-                                  //   stream: scrollPosition.stream,
-                                  //   builder: (context, snapshot) {
-                                  //     return Container(
-                                  //       padding: EdgeInsets.all(5),
-                                  //       height: 26,
-                                  //       // height: 20,
-                                  //       margin: EdgeInsets.only(
-                                  //         top: 2,
-                                  //         left: 10,
-                                  //         right: 10,
-                                  //       ),
-                                  //       color: snapshot.data == 0.0
-                                  //           ? Colors.transparent
-                                  //           : Color.fromARGB(17, 65, 33, 243),
-                                  //       // child: Text(snapshot.data.toString()),
-                                  //     );
-                                  //   },
-                                  // ),
-                                ],
+                              ShiprocketPlan(
+                                scrollController: scrollController,
+                                elements: elements,
+                                planName: 'BASIC',
+                                planCost: 'Rs. 1000/ Month',
+                                icon: FontAwesomeIcons.parachuteBox,
                               ),
-                            ),
+                              ShiprocketPlan(
+                                scrollController: scrollController,
+                                elements: elements,
+                                planCost: 'Rs. 2000/ Month',
+                                planName: 'ADVANCED',
+                                icon: FontAwesomeIcons.plane,
+                              ),
+                              ShiprocketPlan(
+                                scrollController: scrollController,
+                                elements: elements,
+                                planName: 'Rs. 3000/ Month',
+                                planCost: 'PRO',
+                                icon: FontAwesomeIcons.rocket,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(
@@ -420,6 +276,281 @@ class _UpgradePlanState extends State<UpgradePlan> {
                   ),
                 ],
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ShiprocketPlan extends StatelessWidget {
+  const ShiprocketPlan({
+    Key? key,
+    required this.scrollController,
+    required this.elements,
+    required this.planName,
+    required this.planCost,
+    required this.icon,
+  }) : super(key: key);
+
+  final ScrollController scrollController;
+  final List<Map<String, String>> elements;
+  final String planName;
+  final String planCost;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(6),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 2,
+            spreadRadius: 1,
+            color: Color.fromARGB(255, 221, 220, 220),
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      width: double.infinity,
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(6),
+                topRight: Radius.circular(6),
+              ),
+              color: ColorStyle.colorPrimary,
+            ),
+            width: double.infinity,
+            height: 55,
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                FaIcon(
+                  icon,
+                  color: Colors.white,
+                  size: 36,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      planName,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      planCost,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          // use sticky headers to just get the text and then put that text into a stream controller and then use that stream controller to display the text on the screen.
+
+          Expanded(
+            child: Stack(
+              children: [
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      // ListView.builder(
+                      //   key: itemKey,
+                      //   scrollDirection: Axis.vertical,
+                      //   shrinkWrap: true,
+                      //   padding: const EdgeInsets.symmetric(
+                      //     vertical: 10,
+                      //     horizontal: 15,
+                      //   ),
+                      //   itemCount: planCategoryList.length,
+                      //   controller: scrollController,
+                      //   itemBuilder: (context, index) {
+                      //     scrollController.addListener(
+                      //       () {
+                      //         // print(scrollController.offset);
+                      //         scrollPosition
+                      //             .add(scrollController.offset);
+                      //       },
+                      //     );
+                      // return
+                      GroupedListView<dynamic, String>(
+                        controller: scrollController,
+                        useStickyGroupSeparators: true,
+                        floatingHeader: false,
+                        // groupHeaderBuilder: (element) =>
+                        //     Text(element['group']),
+                        // controller: scrollController,
+                        // floatingHeader: true,
+                        // stickyHeaderBackgroundColor: Colors.blue,
+                        elements: elements,
+                        groupBy: (element) => element['group'],
+                        groupSeparatorBuilder: (value) {
+                          return Container(
+                            padding: EdgeInsets.all(5),
+                            // height: 20,
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 20.0,
+                                      ),
+                                      child: Text(
+                                        value,
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                            color:
+                                                Color.fromARGB(194, 0, 0, 0)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                        physics: const NeverScrollableScrollPhysics(),
+                        padding: EdgeInsets.symmetric(
+                          vertical: 0,
+                        ),
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+
+                        itemBuilder: (context, element) {
+                          // scrollController.addListener(
+                          //   () {
+                          //     // print(scrollController.offset);
+                          //     scrollPosition
+                          //         .add(scrollController.offset);
+                          //   },
+                          // );
+                          return Column(
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    CupertinoIcons.chevron_right,
+                                    size: 15,
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    element['item'],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+
+                      //   },
+                      // ),
+                      // StreamBuilder<double>(
+                      //   initialData: 0.0,
+                      //   stream: scrollPosition.stream,
+                      //   builder: (context, snapshot) {
+                      //     return Container(
+                      //       padding: EdgeInsets.all(5),
+                      //       height: 26,
+                      //       // height: 20,
+                      //       margin: EdgeInsets.only(
+                      //         top: 2,
+                      //         left: 10,
+                      //         right: 10,
+                      //       ),
+                      //       color: snapshot.data == 0.0
+                      //           ? Colors.transparent
+                      //           : Color.fromARGB(17, 65, 33, 243),
+                      //       // child: Text(snapshot.data.toString()),
+                      //     );
+                      //   },
+                      // ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(6),
+                        bottomRight: Radius.circular(6),
+                      ),
+                      color: Colors.white,
+                    ),
+                    width: double.infinity,
+                    padding: EdgeInsets.all(20),
+                    child: Center(
+                      child: SizedBox(
+                        height: 40,
+                        width: 150,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            elevation: 6,
+                            backgroundColor: ColorStyle.colorPrimary,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            'Activate Plan',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
