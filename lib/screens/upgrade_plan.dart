@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
+import 'package:sticky_grouped_list/sticky_grouped_list.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import '/utils/color.dart';
 import '/widgets/common_top_bar.dart';
@@ -298,100 +299,116 @@ class _UpgradePlanState extends State<UpgradePlan> {
                           // use sticky headers to just get the text and then put that text into a stream controller and then use that stream controller to display the text on the screen.
 
                           Expanded(
-                            child: Stack(
-                              children: [
-                                ListView.builder(
-                                  key: itemKey,
-                                  scrollDirection: Axis.vertical,
-                                  shrinkWrap: true,
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 10,
-                                    horizontal: 15,
-                                  ),
-                                  controller: scrollController,
-                                  itemCount: planCategoryList.length,
-                                  itemBuilder: (context, index) {
-                                    scrollController.addListener(
-                                      () {
-                                        // print(scrollController.offset);
-                                        scrollPosition
-                                            .add(scrollController.offset);
-                                      },
-                                    );
-                                    return StickyHeaderBuilder(
-                                      overlapHeaders: false,
-                                      builder: (context, stuckAmount) {
-                                        return Container(
-                                          padding: EdgeInsets.all(5),
-                                          // height: 20,
-                                          color: Colors.white,
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    planCategoryList[index]
-                                                        .toString(),
-                                                    style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  // ListView.builder(
+                                  //   key: itemKey,
+                                  //   scrollDirection: Axis.vertical,
+                                  //   shrinkWrap: true,
+                                  //   padding: const EdgeInsets.symmetric(
+                                  //     vertical: 10,
+                                  //     horizontal: 15,
+                                  //   ),
+                                  //   itemCount: planCategoryList.length,
+                                  //   controller: scrollController,
+                                  //   itemBuilder: (context, index) {
+                                  //     scrollController.addListener(
+                                  //       () {
+                                  //         // print(scrollController.offset);
+                                  //         scrollPosition
+                                  //             .add(scrollController.offset);
+                                  //       },
+                                  //     );
+                                  // return
+                                  GroupedListView<dynamic, String>(
+                                    controller: scrollController,
+                                    useStickyGroupSeparators: true,
+                                    floatingHeader: false,
+                                    // groupHeaderBuilder: (element) =>
+                                    //     Text(element['group']),
+                                    // controller: scrollController,
+                                    // floatingHeader: true,
+                                    // stickyHeaderBackgroundColor: Colors.blue,
+                                    elements: elements,
+                                    groupBy: (element) => element['group'],
+                                    groupSeparatorBuilder: (value) {
+                                      return Container(
+                                        padding: EdgeInsets.all(5),
+                                        // height: 20,
+                                        color: Colors.white,
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  value,
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
                                                   ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: 10,
-                                              )
-                                            ],
-                                          ),
-                                        );
-                                      },
-                                      content: GroupedListView<dynamic, String>(
-                                        elements: elements.toList(),
-                                        groupBy: (element) => element['group'],
-                                        groupSeparatorBuilder: (value) {
-                                          return Text(value);
-                                        },
-                                        physics:
-                                            const NeverScrollableScrollPhysics(),
-                                        padding: EdgeInsets.symmetric(
-                                          vertical: 10,
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            )
+                                          ],
                                         ),
-                                        scrollDirection: Axis.vertical,
-                                        shrinkWrap: true,
-                                        itemBuilder: (context, element) {
-                                          return Text(element['item']);
-                                        },
-                                      ),
-                                    );
-                                  },
-                                ),
-                                StreamBuilder<double>(
-                                  initialData: 0.0,
-                                  stream: scrollPosition.stream,
-                                  builder: (context, snapshot) {
-                                    return Container(
-                                      padding: EdgeInsets.all(5),
-                                      height: 26,
-                                      // height: 20,
-                                      margin: EdgeInsets.only(
-                                        top: 2,
-                                        left: 10,
-                                        right: 10,
-                                      ),
-                                      color: snapshot.data == 0.0
-                                          ? Colors.transparent
-                                          : Color.fromARGB(17, 65, 33, 243),
-                                      // child: Text(snapshot.data.toString()),
-                                    );
-                                  },
-                                ),
-                              ],
+                                      );
+                                    },
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 10,
+                                    ),
+                                    scrollDirection: Axis.vertical,
+                                    shrinkWrap: true,
+
+                                    itemBuilder: (context, element) {
+                                      // scrollController.addListener(
+                                      //   () {
+                                      //     // print(scrollController.offset);
+                                      //     scrollPosition
+                                      //         .add(scrollController.offset);
+                                      //   },
+                                      // );
+                                      return Text(
+                                        element['item'],
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  //   },
+                                  // ),
+                                  // StreamBuilder<double>(
+                                  //   initialData: 0.0,
+                                  //   stream: scrollPosition.stream,
+                                  //   builder: (context, snapshot) {
+                                  //     return Container(
+                                  //       padding: EdgeInsets.all(5),
+                                  //       height: 26,
+                                  //       // height: 20,
+                                  //       margin: EdgeInsets.only(
+                                  //         top: 2,
+                                  //         left: 10,
+                                  //         right: 10,
+                                  //       ),
+                                  //       color: snapshot.data == 0.0
+                                  //           ? Colors.transparent
+                                  //           : Color.fromARGB(17, 65, 33, 243),
+                                  //       // child: Text(snapshot.data.toString()),
+                                  //     );
+                                  //   },
+                                  // ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
