@@ -2,6 +2,7 @@ import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../models/shiprocket_training.dart';
 import '../utils/box_styles.dart';
 import '../utils/color.dart';
 import 'invoices/all_other_invoices.dart';
@@ -15,6 +16,40 @@ class ShipRocketTrainings extends StatefulWidget {
 }
 
 class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
+  List<ShiprocketTraining> shiprocketTraining = [
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 2:00 PM - 3:00 PM',
+      triainingType: 'Order Creation and Processing Module',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 4:00 PM - 6:00 PM',
+      triainingType: 'Daily Session',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 2:00 PM - 3:00 PM',
+      triainingType: 'Post-processing Module',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 1:15 PM - 6:00 PM',
+      triainingType: 'Daily Session',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 1:15 PM - 6:00 PM',
+      triainingType: 'Daily Session',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 1:15 PM - 6:00 PM',
+      triainingType: 'Daily Session',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 1:15 PM - 6:00 PM',
+      triainingType: 'Daily Session',
+    ),
+    ShiprocketTraining(
+      trainingDate: '29 Sep 2022 | 1:15 PM - 6:00 PM',
+      triainingType: 'Daily Session',
+    ),
+  ];
   bool weekSelected = true;
 
   bool monthSelected = false;
@@ -56,7 +91,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
@@ -86,7 +121,10 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12.0),
                 ),
-                child: SingleChildScrollView(
+                child:
+                    // CustomScrollView(
+                    //   slivers: [
+                    SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -108,16 +146,17 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(2),
+                                  padding: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 216, 215, 215),
+                                    color: const Color.fromARGB(
+                                        255, 216, 215, 215),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Row(
@@ -133,7 +172,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                         },
                                         child: Container(
                                           width: 70,
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                             vertical: 6,
                                           ),
@@ -145,7 +184,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                             borderRadius:
                                                 BorderRadius.circular(7.0),
                                           ),
-                                          child: Text(
+                                          child: const Text(
                                             'Month',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
@@ -164,7 +203,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                         },
                                         child: Container(
                                           width: 70,
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                             horizontal: 10,
                                             vertical: 6,
                                           ),
@@ -176,7 +215,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                             borderRadius:
                                                 BorderRadius.circular(7.0),
                                           ),
-                                          child: Text(
+                                          child: const Text(
                                             'Week',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
@@ -193,7 +232,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                       MainAxisAlignment.spaceAround,
                                   children: [
                                     Row(
-                                      children: [
+                                      children: const [
                                         CircleAvatar(
                                           radius: 5,
                                           backgroundColor: Colors.green,
@@ -209,11 +248,11 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                         )
                                       ],
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 20,
                                     ),
                                     Row(
-                                      children: [
+                                      children: const [
                                         CircleAvatar(
                                           radius: 5,
                                           backgroundColor: Colors.orange,
@@ -233,13 +272,13 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
@@ -273,14 +312,107 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                           ],
                           initialIndex: 0,
                           views: [
-                            Container(),
-                            Container(),
+                            ListView.builder(
+                              padding: const EdgeInsets.all(12),
+                              itemCount: shiprocketTraining.length,
+                              itemBuilder: (context, index) {
+                                return Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                shiprocketTraining[index]
+                                                    .triainingType,
+                                                style: const TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5,
+                                              ),
+                                              Text(
+                                                shiprocketTraining[index]
+                                                    .trainingDate,
+                                                style: const TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w300,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 100,
+                                          height: 32,
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              elevation: 0,
+                                              backgroundColor:
+                                                  ColorStyle.colorPrimary,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(6),
+                                              ),
+                                            ),
+                                            onPressed: () {},
+                                            child: const Text(
+                                              'Register',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 25,
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                            Container(
+                              alignment: Alignment.topCenter,
+                              height: 300,
+                              child: SizedBox(
+                                width: 250,
+                                child: Column(
+                                  children: [
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Image.asset(
+                                      'assets/no-trainings-found.PNG',
+                                    ),
+                                    const Text(
+                                      'No upcoming trainings found',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     ],
                   ),
                 ),
+                //   ],
+                // ),
               ),
             ),
           ),

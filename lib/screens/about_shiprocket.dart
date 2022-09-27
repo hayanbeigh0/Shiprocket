@@ -42,7 +42,7 @@ class AboutShiprocket extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(6),
@@ -57,7 +57,7 @@ class AboutShiprocket extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Container(
@@ -73,7 +73,7 @@ class AboutShiprocket extends StatelessWidget {
                                     'assets/shiprocket-logo-white.png',
                                   ),
                                 ),
-                                Text(
+                                const Text(
                                   'Shiprocket',
                                   style: TextStyle(
                                     fontSize: 32,
@@ -84,11 +84,11 @@ class AboutShiprocket extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Row(
-                            children: [
+                            children: const [
                               Text(
                                 'About us -',
                                 style: TextStyle(
@@ -110,18 +110,18 @@ class AboutShiprocket extends StatelessWidget {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Container(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             width: double.infinity,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Color.fromARGB(34, 130, 142, 221),
+                              color: const Color.fromARGB(34, 130, 142, 221),
                             ),
                             child: Column(
-                              children: [
+                              children: const [
                                 Text(
                                   'Shiprocket is a tech-enabled logistics and fulfillment solution provider serving over 1 lakh active Direct to Consumer sellers with its widest pin code reach, lowest rates and best customer service. We help Small and Medium Businesses manage end-to-end post-order operations seamlesslv with our Al-powered post-order services such as smart packaging, Commerce fulfillment and warehousing solution, affordable shipping aggregation, hyperlocal deliveries, and more.',
                                   style: TextStyle(
@@ -134,7 +134,7 @@ class AboutShiprocket extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           SizedBox(

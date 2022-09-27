@@ -13,11 +13,14 @@ import 'package:shiprocket/screens/help_and_support_screen/help_and_support.dart
 import 'package:shiprocket/screens/manifests_screen.dart';
 import 'package:shiprocket/screens/refer_and_earn.dart';
 import 'package:shiprocket/screens/settings_screen.dart';
+import 'package:shiprocket/screens/share_feedback.dart';
 import 'package:shiprocket/screens/shiprocket_trainings.dart';
+import 'package:shiprocket/screens/signup_screen.dart';
 import 'package:shiprocket/screens/upgrade_plan.dart';
 import 'package:shiprocket/screens/view_profile_screen.dart';
 import 'package:shiprocket/screens/wallet_and_passbook_screen.dart/wallet_passbook_tab.dart';
 import 'package:shiprocket/screens/weight_discrepancy.dart';
+import 'package:shiprocket/utils/color.dart';
 
 import 'invoices/invoices.dart';
 
@@ -633,23 +636,146 @@ class _MoreScreenState extends State<MoreScreen> {
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'Share Feedback',
-              iconData: MyIcons.share_feedback,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ShareFeedback(),
+                ));
+              },
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Share Feedback',
+                  iconData: MyIcons.share_feedback,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'Rate Us',
-              iconData: MyIcons.rate_us,
+            GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    contentPadding: EdgeInsets.all(10),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(),
+                            SizedBox(
+                              height: 120,
+                              child: Image.asset(
+                                  'assets/shiprocket-rating-image.PNG'),
+                            ),
+                            GestureDetector(
+                              onTap: () => Navigator.of(context).pop(),
+                              child: Icon(Icons.close),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Enjoying Shiprocket?',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                              width: 100,
+                              height: 45,
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(7),
+                                    side: BorderSide(
+                                      color: ColorStyle.colorPrimary,
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text(
+                                  'Not really',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: ColorStyle.colorPrimary,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 110,
+                              height: 45,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: ColorStyle.colorPrimary,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(7),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text(
+                                  'Yes!',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Rate Us',
+                  iconData: MyIcons.rate_us,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'Logout',
-              iconData: MyIcons.logout,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => SignupScreen(),
+                    ),
+                    (route) => false);
+              },
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Logout',
+                  iconData: MyIcons.logout,
+                ),
+              ),
             ),
           ],
         ),
