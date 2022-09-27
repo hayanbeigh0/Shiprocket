@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shiprocket/screens/bottom_navigation.dart';
 
 class SignupOptions extends StatelessWidget {
   const SignupOptions({
@@ -13,26 +14,34 @@ class SignupOptions extends StatelessWidget {
       children: [
         Column(
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 30,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(
-                      100,
+            GestureDetector(
+              onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) => BottomNavigation(),
+                ),
+                (route) => false,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 30,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(
+                        100,
+                      ),
+                    ),
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 208, 207, 207),
+                      width: 0.5,
                     ),
                   ),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 208, 207, 207),
-                    width: 0.5,
+                  padding: const EdgeInsets.all(4),
+                  child: Image.asset(
+                    'assets/facebook-icon.PNG',
+                    fit: BoxFit.cover,
                   ),
-                ),
-                padding: const EdgeInsets.all(16.0),
-                child: Image.network(
-                  'https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png',
-                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -52,26 +61,34 @@ class SignupOptions extends StatelessWidget {
         ),
         Column(
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 30,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(
-                      100,
+            GestureDetector(
+              onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) => BottomNavigation(),
+                ),
+                (route) => false,
+              ),
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 30,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(
+                        100,
+                      ),
+                    ),
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 208, 207, 207),
+                      width: 0.5,
                     ),
                   ),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 208, 207, 207),
-                    width: 0.5,
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    'assets/google-icon.PNG',
+                    fit: BoxFit.cover,
                   ),
-                ),
-                padding: const EdgeInsets.all(8.0),
-                child: Image.network(
-                  'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png',
-                  fit: BoxFit.cover,
                 ),
               ),
             ),
