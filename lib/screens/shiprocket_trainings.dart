@@ -5,11 +5,9 @@ import 'package:table_calendar/table_calendar.dart';
 import '../models/shiprocket_training.dart';
 import '../utils/box_styles.dart';
 import '../utils/color.dart';
-import 'invoices/all_other_invoices.dart';
-import 'invoices/freight_invoices.dart';
 
 class ShipRocketTrainings extends StatefulWidget {
-  ShipRocketTrainings({super.key});
+  const ShipRocketTrainings({super.key});
 
   @override
   State<ShipRocketTrainings> createState() => _ShipRocketTrainingsState();
@@ -121,10 +119,7 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12.0),
                 ),
-                child:
-                    // CustomScrollView(
-                    //   slivers: [
-                    SingleChildScrollView(
+                child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -411,8 +406,6 @@ class _ShipRocketTrainingsState extends State<ShipRocketTrainings> {
                     ],
                   ),
                 ),
-                //   ],
-                // ),
               ),
             ),
           ),
