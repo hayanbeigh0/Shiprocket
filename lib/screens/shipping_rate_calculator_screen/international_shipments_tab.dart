@@ -311,7 +311,7 @@ class InternationsShipmentsTab extends StatelessWidget {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(17.0),
-                primary: const Color.fromARGB(212, 87, 39, 176),
+                backgroundColor: const Color.fromARGB(212, 87, 39, 176),
               ),
               child: const Text('Calculate Shipment Rate'),
             ),

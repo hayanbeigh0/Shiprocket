@@ -374,7 +374,7 @@ class _CourierPrioritiesState extends State<CourierPriorities> {
                                 isContainerSelected:
                                     isFastestContainerOptionSelected,
                                 text: 'Fastest',
-                                iconData: MyBus.shipping_fast,
+                                iconData: MyBus.shippingFast,
                               ),
                             ),
                             const SizedBox(
@@ -571,7 +571,7 @@ class _CourierPrioritiesState extends State<CourierPriorities> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
-                              primary: ColorStyle.colorPrimary,
+                              backgroundColor: ColorStyle.colorPrimary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(9.0),
                               ),

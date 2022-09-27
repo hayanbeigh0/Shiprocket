@@ -23,24 +23,24 @@ class PickupPerformanceCountListItem extends StatelessWidget {
           Container(
             width: 100,
             height: 92,
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               // horizontal: 15,
               vertical: 30,
             ),
             decoration: BoxDecoration(
               border: Border.all(
-                color: Color.fromARGB(35, 0, 0, 0),
+                color: const Color.fromARGB(35, 0, 0, 0),
               ),
               borderRadius: BorderRadius.circular(5.0),
             ),
             child: Center(
               child: Column(
-                children: [
+                children: const [
                   Text('O'),
                   Expanded(
                     child: Text(
                       'Out of O',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 12,
                         color: Color.fromARGB(255, 158, 158, 158),
                       ),

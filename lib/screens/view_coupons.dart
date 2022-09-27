@@ -25,17 +25,17 @@ class ViewCoupons extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          CommonTopBar(title: 'View Offers'),
-          SizedBox(
+          const CommonTopBar(title: 'View Offers'),
+          const SizedBox(
             height: 15,
           ),
           Container(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             width: double.infinity,
             child: Center(
               child: TextFormFieldContainer(
                 borderColor: Colors.transparent,
-                backgroundColor: Color.fromARGB(255, 233, 232, 232),
+                backgroundColor: const Color.fromARGB(255, 233, 232, 232),
                 textForm: TextField(
                   decoration: InputDecoration(
                     suffixText: 'Apply',
@@ -54,7 +54,7 @@ class ViewCoupons extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               itemCount: coupons.length,
               itemBuilder: (context, index) => Card(
                 child: Padding(
@@ -73,17 +73,18 @@ class ViewCoupons extends StatelessWidget {
                                   padding: EdgeInsets.zero,
                                   borderType: BorderType.Rect,
                                   strokeWidth: 1.3,
-                                  dashPattern: [5],
-                                  radius: Radius.circular(8),
+                                  dashPattern: const [5],
+                                  radius: const Radius.circular(8),
                                   color: ColorStyle.colorPrimary,
                                   child: Container(
-                                    color: Color.fromARGB(13, 51, 41, 100),
+                                    color:
+                                        const Color.fromARGB(13, 51, 41, 100),
                                     child: Center(
                                       child: Padding(
                                         padding: const EdgeInsets.all(12.0),
                                         child: Text(
                                           'FLAT${coupons[index].cashbackAmount}',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontSize: 17,
                                           ),
                                         ),
@@ -91,26 +92,26 @@ class ViewCoupons extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Spacer(),
-                                SizedBox()
+                                const Spacer(),
+                                const SizedBox()
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             Text(
                               'Get ₹ ${coupons[index].cashbackAmount} Flat Cashback on a minimum recharge of ₹ ${coupons[index].minimumRechargeAmount}.',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 13,
                               ),
                             ),
                             Text(
                               'Coupon Expires On: ${coupons[index].expiry}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 13,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(

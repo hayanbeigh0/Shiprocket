@@ -330,7 +330,7 @@ class _GSTInvoicingState extends State<GSTInvoicing> {
                           height: 60,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: ColorStyle.colorPrimary,
+                              backgroundColor: ColorStyle.colorPrimary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8.0),
                               ),

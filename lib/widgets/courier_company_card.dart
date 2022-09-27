@@ -69,7 +69,7 @@ class _CourierCompanyCardState extends State<CourierCompanyCard> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: const [
                       Icon(
-                        MyBus.shipping_fast,
+                        MyBus.shippingFast,
                         size: 15,
                         color: Color.fromARGB(255, 79, 79, 79),
                       ),

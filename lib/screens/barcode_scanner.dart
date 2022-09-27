@@ -25,10 +25,8 @@ class Barcode extends StatelessWidget {
                           controller: cameraController,
                           onDetect: (barcode, args) {
                             if (barcode.rawValue == null) {
-                              print('Failed to scan Barcode');
                             } else {
                               final String code = barcode.rawValue!;
-                              print('Barcode found! $code');
                             }
                           },
                         ),
@@ -237,7 +235,7 @@ class Barcode extends StatelessWidget {
                             ),
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: colorPrimary,
+                                backgroundColor: colorPrimary,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(

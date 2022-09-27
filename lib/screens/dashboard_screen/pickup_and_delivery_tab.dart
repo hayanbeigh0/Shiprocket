@@ -1,11 +1,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../widgets/pickup_performace_count_list_item.dart';
 import '../../widgets/pickup_performance_percent_list_item.dart';
-import 'overview_tab.dart';
 
 class PickupAndDelivery extends StatefulWidget {
   const PickupAndDelivery({Key? key}) : super(key: key);
@@ -305,7 +302,7 @@ class _PickupAndDeliveryState extends State<PickupAndDelivery> {
                                             const SizedBox(
                                               height: 10,
                                             ),
-                                            PickupPerformanceCountListItem(
+                                            const PickupPerformanceCountListItem(
                                               pickupPerformanceListCount: 0.0,
                                               pickupPerformanceListHeading:
                                                   'Pickup within 24-48 Hours',

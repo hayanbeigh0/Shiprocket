@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
-import 'package:sticky_grouped_list/sticky_grouped_list.dart';
-import 'package:sticky_headers/sticky_headers.dart';
 import '/utils/color.dart';
 import '/widgets/common_top_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

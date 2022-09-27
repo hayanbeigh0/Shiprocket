@@ -42,7 +42,7 @@ class IntegrateOtherChannels extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
@@ -81,11 +81,11 @@ class IntegrateOtherChannels extends StatelessWidget {
                         children: [
                           Container(
                             width: double.infinity,
-                            padding: EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
-                                color: Color.fromARGB(255, 212, 210, 210),
+                                color: const Color.fromARGB(255, 212, 210, 210),
                               ),
                               borderRadius: BorderRadius.circular(10.0),
                               boxShadow: [
@@ -93,17 +93,17 @@ class IntegrateOtherChannels extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 0.8,
                                   blurRadius: 2,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Color.fromARGB(43, 82, 121, 247),
+                                color: const Color.fromARGB(43, 82, 121, 247),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              padding: EdgeInsets.all(14.0),
+                              padding: const EdgeInsets.all(14.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -116,7 +116,7 @@ class IntegrateOtherChannels extends StatelessWidget {
                                         color: Colors.black,
                                       ),
                                       children: <TextSpan>[
-                                        TextSpan(
+                                        const TextSpan(
                                           text:
                                               'Do vou sell at online marketolaces or have your own website? You can now connect them with Shiprocket to simplify your order management process. We provide integration with multiple sales channel such as Shopify, Amazon, Magento, WooCommerce, etc.To understand how different integrations work,',
                                         ),
@@ -126,7 +126,7 @@ class IntegrateOtherChannels extends StatelessWidget {
                                             color: ColorStyle.colorPrimary,
                                           ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text:
                                               'here. Your orders and products will be automaticallv sunced as soon as you successfully connect your preferred channel.Sounds interesting? Visit our web panel and connect your first channel with Shiprocket',
                                         ),

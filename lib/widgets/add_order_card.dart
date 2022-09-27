@@ -285,7 +285,7 @@ class _AddOrderCardState extends State<AddOrderCard> {
                             height: 50,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: colorPrimary,
+                                backgroundColor: colorPrimary,
                                 elevation: 0,
                               ),
                               child: const Text(

@@ -1,26 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shiprocket/my_icons_icons.dart';
-import 'package:shiprocket/screens/about_shiprocket.dart';
-import 'package:shiprocket/screens/channel_integrations/integrate_other_channels.dart';
-import 'package:shiprocket/screens/channel_integrations/integrate_with_shopify.dart';
-import 'package:shiprocket/screens/cod_remmitance.dart';
-import 'package:shiprocket/screens/customers_screen.dart';
-import 'package:shiprocket/screens/dashboard_screen/dashboard_screen.dart';
-import 'package:shiprocket/screens/dashboard_screen/weight_discrepancies.dart';
-import 'package:shiprocket/screens/faq_screen.dart';
-import 'package:shiprocket/screens/help_and_support_screen/help_and_support.dart';
-import 'package:shiprocket/screens/manifests_screen.dart';
-import 'package:shiprocket/screens/refer_and_earn.dart';
-import 'package:shiprocket/screens/settings_screen.dart';
-import 'package:shiprocket/screens/share_feedback.dart';
-import 'package:shiprocket/screens/shiprocket_trainings.dart';
-import 'package:shiprocket/screens/signup_screen.dart';
-import 'package:shiprocket/screens/upgrade_plan.dart';
-import 'package:shiprocket/screens/view_profile_screen.dart';
-import 'package:shiprocket/screens/wallet_and_passbook_screen.dart/wallet_passbook_tab.dart';
-import 'package:shiprocket/screens/weight_discrepancy.dart';
-import 'package:shiprocket/utils/color.dart';
+import '/my_icons_icons.dart';
+import '/screens/about_shiprocket.dart';
+import '/screens/channel_integrations/integrate_other_channels.dart';
+import '/screens/channel_integrations/integrate_with_shopify.dart';
+import '/screens/cod_remmitance.dart';
+import '/screens/customers_screen.dart';
+import '/screens/dashboard_screen/dashboard_screen.dart';
+import '/screens/faq_screen.dart';
+import '/screens/help_and_support_screen/help_and_support.dart';
+import '/screens/manifests_screen.dart';
+import '/screens/refer_and_earn.dart';
+import '/screens/settings_screen.dart';
+import '/screens/share_feedback.dart';
+import '/screens/shiprocket_trainings.dart';
+import '/screens/signup_screen.dart';
+import '/screens/upgrade_plan.dart';
+import '/screens/view_profile_screen.dart';
+import '/screens/wallet_and_passbook_screen.dart/wallet_passbook_tab.dart';
+import '/screens/weight_discrepancy.dart';
+import '/utils/color.dart';
 
 import 'invoices/invoices.dart';
 
@@ -253,7 +252,7 @@ class _MoreScreenState extends State<MoreScreen> {
             ),
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => WalletAndPassbookTab(),
+                builder: (context) => const WalletAndPassbookTab(),
               )),
               child: const OptionListItem(
                 itemName: 'Wallet & Passbook',
@@ -363,7 +362,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                           Navigator.of(context)
                                               .push(MaterialPageRoute(
                                             builder: (context) =>
-                                                IntegrateWithShopify(),
+                                                const IntegrateWithShopify(),
                                           ));
                                         },
                                         child: Container(
@@ -411,7 +410,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                           Navigator.of(context)
                                               .push(MaterialPageRoute(
                                             builder: (context) =>
-                                                IntegrateOtherChannels(),
+                                                const IntegrateOtherChannels(),
                                           ));
                                         },
                                         child: Container(
@@ -479,7 +478,7 @@ class _MoreScreenState extends State<MoreScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Invoices(),
+                  builder: (context) => const Invoices(),
                 ));
               },
               child: Container(
@@ -510,7 +509,7 @@ class _MoreScreenState extends State<MoreScreen> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => SettingsScreen(),
+                    builder: (context) => const SettingsScreen(),
                   ),
                 );
               },
@@ -524,7 +523,7 @@ class _MoreScreenState extends State<MoreScreen> {
             ),
             GestureDetector(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ReferAndEarn(),
+                builder: (context) => const ReferAndEarn(),
               )),
               child: Container(
                 color: Colors.transparent,
@@ -559,7 +558,7 @@ class _MoreScreenState extends State<MoreScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ShipRocketTrainings(),
+                  builder: (context) => const ShipRocketTrainings(),
                 ));
               },
               child: Container(
@@ -600,7 +599,7 @@ class _MoreScreenState extends State<MoreScreen> {
             GestureDetector(
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => HelpAndSupport(),
+                  builder: (context) => const HelpAndSupport(),
                 ),
               ),
               child: const OptionListItem(
@@ -621,7 +620,7 @@ class _MoreScreenState extends State<MoreScreen> {
             GestureDetector(
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => AboutShiprocket(),
+                  builder: (context) => const AboutShiprocket(),
                 ),
               ),
               child: Container(
@@ -639,7 +638,7 @@ class _MoreScreenState extends State<MoreScreen> {
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ShareFeedback(),
+                  builder: (context) => const ShareFeedback(),
                 ));
               },
               child: Container(
@@ -659,7 +658,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    contentPadding: EdgeInsets.all(10),
+                    contentPadding: const EdgeInsets.all(10),
                     content: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -667,7 +666,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(),
+                            const SizedBox(),
                             SizedBox(
                               height: 120,
                               child: Image.asset(
@@ -675,18 +674,18 @@ class _MoreScreenState extends State<MoreScreen> {
                             ),
                             GestureDetector(
                               onTap: () => Navigator.of(context).pop(),
-                              child: Icon(Icons.close),
+                              child: const Icon(Icons.close),
                             ),
                           ],
                         ),
-                        Text(
+                        const Text(
                           'Enjoying Shiprocket?',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Row(
@@ -729,7 +728,7 @@ class _MoreScreenState extends State<MoreScreen> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Yes!',
                                   style: TextStyle(
                                     fontSize: 16,
@@ -740,7 +739,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                       ],
@@ -764,7 +763,7 @@ class _MoreScreenState extends State<MoreScreen> {
               onTap: () {
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
-                      builder: (context) => SignupScreen(),
+                      builder: (context) => const SignupScreen(),
                     ),
                     (route) => false);
               },

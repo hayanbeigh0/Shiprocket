@@ -7,7 +7,7 @@ import '../utils/color.dart';
 import '../widgets/text_form_field_container.dart';
 
 class CustomerDetail extends StatefulWidget {
-  CustomerDetail({required this.index, Key? key}) : super(key: key);
+  const CustomerDetail({required this.index, Key? key}) : super(key: key);
   final int index;
 
   @override
@@ -382,8 +382,10 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                         showDialog(
                                           context: context,
                                           builder: (context) => AlertDialog(
-                                            insetPadding: EdgeInsets.all(10),
-                                            contentPadding: EdgeInsets.all(20),
+                                            insetPadding:
+                                                const EdgeInsets.all(10),
+                                            contentPadding:
+                                                const EdgeInsets.all(20),
                                             content: SizedBox(
                                               width: MediaQuery.of(context)
                                                   .size
@@ -399,10 +401,10 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                                         color: ColorStyle
                                                             .colorPrimary,
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         width: 10,
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         'Edit Customer Details',
                                                         style: TextStyle(
                                                           fontSize: 18,
@@ -410,7 +412,7 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                                               FontWeight.w600,
                                                         ),
                                                       ),
-                                                      Spacer(),
+                                                      const Spacer(),
                                                       SizedBox(
                                                         width: 40,
                                                         child: IconButton(
@@ -419,7 +421,7 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                                                     context)
                                                                 .pop();
                                                           },
-                                                          icon: Icon(
+                                                          icon: const Icon(
                                                             Icons.close,
                                                             size: 26,
                                                           ),
@@ -689,7 +691,7 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                                       : const SizedBox(
                                                           height: 0,
                                                         ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     height: 14,
                                                   ),
                                                   SizedBox(
@@ -697,11 +699,14 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                                     child: ElevatedButton(
                                                       style: ElevatedButton
                                                           .styleFrom(
-                                                        padding: EdgeInsets.all(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(
                                                           13.0,
                                                         ),
-                                                        primary: ColorStyle
-                                                            .colorPrimary,
+                                                        backgroundColor:
+                                                            ColorStyle
+                                                                .colorPrimary,
                                                         shape:
                                                             RoundedRectangleBorder(
                                                           borderRadius:
@@ -758,7 +763,7 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                                         Navigator.of(context)
                                                             .pop();
                                                       },
-                                                      child: Text(
+                                                      child: const Text(
                                                         'Save',
                                                         style: TextStyle(
                                                           fontSize: 16,
@@ -952,7 +957,7 @@ class _CustomerDetailState extends State<CustomerDetail> {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(20.0),
-                  primary: ColorStyle.colorPrimary,
+                  backgroundColor: ColorStyle.colorPrimary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(7.0),
                   ),
@@ -1249,7 +1254,8 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                       height: 50,
                                       child: ElevatedButton(
                                         style: ElevatedButton.styleFrom(
-                                          primary: ColorStyle.colorPrimary,
+                                          backgroundColor:
+                                              ColorStyle.colorPrimary,
                                           elevation: 0,
                                         ),
                                         child: const Text(

@@ -10,7 +10,7 @@ import '../../utils/box_styles.dart';
 import '../../utils/color.dart';
 
 class KYCScreen2 extends StatefulWidget {
-  KYCScreen2({super.key});
+  const KYCScreen2({super.key});
 
   @override
   State<KYCScreen2> createState() => _KYCScreen2State();
@@ -186,7 +186,7 @@ class _KYCScreen2State extends State<KYCScreen2> {
                                             color: ColorStyle.borderGrey,
                                             strokeWidth: 1.5,
                                             dashPattern: const [6],
-                                            radius: Radius.circular(8.0),
+                                            radius: const Radius.circular(8.0),
                                             child: SizedBox(
                                               width: double.infinity,
                                               child: Center(
@@ -199,7 +199,7 @@ class _KYCScreen2State extends State<KYCScreen2> {
                                                         BorderRadius.circular(
                                                       8.0,
                                                     ),
-                                                    color: Color.fromARGB(
+                                                    color: const Color.fromARGB(
                                                       255,
                                                       220,
                                                       220,
@@ -291,7 +291,7 @@ class _KYCScreen2State extends State<KYCScreen2> {
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => KYCScreen3(),
+                                builder: (context) => const KYCScreen3(),
                               ));
                             },
                             child: const Text(

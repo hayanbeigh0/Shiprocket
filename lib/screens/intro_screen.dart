@@ -134,7 +134,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(17.0),
-                      primary: colorPrimary,
+                      backgroundColor: colorPrimary,
                       elevation: 6,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(7.0),
@@ -164,7 +164,7 @@ class _IntroScreenState extends State<IntroScreen> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(17.0),
-                      primary: Colors.white,
+                      backgroundColor: Colors.white,
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         side: BorderSide(

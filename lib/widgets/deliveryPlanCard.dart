@@ -27,7 +27,7 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color.fromARGB(255, 214, 212, 212),
+          color: const Color.fromARGB(255, 214, 212, 212),
         ),
         borderRadius: BorderRadius.circular(8.0),
       ),
@@ -52,12 +52,12 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
                 Text(
                   'DELIVERED + ${widget.deliveryIn} DAYS',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w600,
                   ),
@@ -65,34 +65,34 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
-          Text('Transaction Charges'),
-          SizedBox(
+          const Text('Transaction Charges'),
+          const SizedBox(
             height: 10,
           ),
           Text(
             '${widget.transactionCharges}',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Text(
+          const Text(
             'Of COD Amount',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
-          Text(
+          const Text(
             '(GST Inclusive)',
             style: TextStyle(
               fontSize: 10,
@@ -100,16 +100,16 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
               color: Color.fromARGB(255, 159, 159, 159),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: Divider(
               color: Colors.grey,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Row(
@@ -120,7 +120,7 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
                 width: 30,
                 child: Checkbox(
                   activeColor: ColorStyle.colorPrimary,
-                  side: BorderSide(
+                  side: const BorderSide(
                     color: Colors.grey,
                   ),
                   value: agreedToTermsAndConditions,
@@ -133,13 +133,13 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
               ),
               Row(
                 children: [
-                  Text(
+                  const Text(
                     'I accept the',
                     style: TextStyle(
                       fontSize: 13,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 2,
                   ),
                   Text(
@@ -154,26 +154,26 @@ class _DeliveryPlanCardState extends State<DeliveryPlanCard> {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               elevation: 0,
-              primary: ColorStyle.colorPrimary,
-              padding: EdgeInsets.symmetric(
+              backgroundColor: ColorStyle.colorPrimary,
+              padding: const EdgeInsets.symmetric(
                 horizontal: 30,
               ),
             ),
             onPressed: agreedToTermsAndConditions ? widget.onPressed : null,
             child: Text(
               'Activate Plan ${widget.planNumber}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
         ],

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:shiprocket/utils/color.dart';
 
 import '../utils/box_styles.dart';
@@ -48,7 +46,7 @@ class AccountDetails extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
@@ -68,21 +66,21 @@ class AccountDetails extends StatelessWidget {
                       title: 'First Name',
                       value: firstName,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     AccountDetailsCardRow(
                       title: 'Last Name',
                       value: lastName,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     AccountDetailsCardRow(
                       title: 'Mobile',
                       value: mobileNumber,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 12,
                     ),
                     AccountDetailsCardRow(
@@ -94,7 +92,7 @@ class AccountDetails extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.25,
                           child: Row(
-                            children: [
+                            children: const [
                               Text(
                                 'Plan',
                                 style: TextStyle(
@@ -113,19 +111,19 @@ class AccountDetails extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Expanded(
                           child: Text(
                             plan,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         TextButton(
                           onPressed: () {},
                           child: Text(
@@ -144,7 +142,7 @@ class AccountDetails extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           SizedBox(
@@ -152,8 +150,8 @@ class AccountDetails extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                primary: ColorStyle.colorPrimary,
-                padding: EdgeInsets.all(
+                backgroundColor: ColorStyle.colorPrimary,
+                padding: const EdgeInsets.all(
                   18.0,
                 ),
                 shape: RoundedRectangleBorder(
@@ -161,7 +159,7 @@ class AccountDetails extends StatelessWidget {
                 ),
               ),
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Edit Account Details',
                 style: TextStyle(
                   fontSize: 16,
@@ -193,13 +191,13 @@ class AccountDetailsCardRow extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              Spacer(),
-              Text(
+              const Spacer(),
+              const Text(
                 ':',
                 style: TextStyle(
                   fontSize: 16,
@@ -209,12 +207,12 @@ class AccountDetailsCardRow extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 15,
         ),
         Text(
           value,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),

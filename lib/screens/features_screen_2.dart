@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shiprocket/widgets/common_screen_theme.dart';
-import 'package:shiprocket/widgets/common_top_bar.dart';
+import '/widgets/common_top_bar.dart';
 
 import '../utils/color.dart';
 
 class Features2 extends StatefulWidget {
-  Features2({Key? key}) : super(key: key);
+  const Features2({Key? key}) : super(key: key);
 
   @override
   State<Features2> createState() => _Features2State();
@@ -65,22 +64,22 @@ class _Features2State extends State<Features2> {
                             padding: const EdgeInsets.all(10.0),
                             child: Column(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Enable Split Shipments',
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     Switch(
-                                      activeTrackColor:
-                                          Color.fromARGB(255, 229, 225, 225),
+                                      activeTrackColor: const Color.fromARGB(
+                                          255, 229, 225, 225),
                                       activeColor: ColorStyle.colorPrimary,
                                       value: enableSplitShipments,
                                       onChanged: (value) {
@@ -92,7 +91,7 @@ class _Features2State extends State<Features2> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Container(
@@ -100,7 +99,8 @@ class _Features2State extends State<Features2> {
                                   padding: const EdgeInsets.all(15.0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: Color.fromARGB(186, 228, 235, 246),
+                                    color: const Color.fromARGB(
+                                        186, 228, 235, 246),
                                   ),
                                   child: Column(
                                     crossAxisAlignment:
@@ -159,10 +159,10 @@ class _Features2State extends State<Features2> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: double.infinity,
                                   child: Text(
                                     'Enable Order Verification',
@@ -172,7 +172,7 @@ class _Features2State extends State<Features2> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 25,
                                 ),
                                 Container(
@@ -180,7 +180,8 @@ class _Features2State extends State<Features2> {
                                   padding: const EdgeInsets.all(15.0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: Color.fromARGB(186, 228, 235, 246),
+                                    color: const Color.fromARGB(
+                                        186, 228, 235, 246),
                                   ),
                                   child: Column(
                                     crossAxisAlignment:
@@ -188,17 +189,18 @@ class _Features2State extends State<Features2> {
                                     children: [
                                       Row(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Verify COD Orders',
                                             style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Switch(
-                                            activeTrackColor: Color.fromARGB(
-                                                255, 229, 225, 225),
+                                            activeTrackColor:
+                                                const Color.fromARGB(
+                                                    255, 229, 225, 225),
                                             activeColor:
                                                 ColorStyle.colorPrimary,
                                             value: verifyCODOrders,
@@ -211,22 +213,23 @@ class _Features2State extends State<Features2> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Row(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Verify Prepaid Orders',
                                             style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Switch(
-                                            activeTrackColor: Color.fromARGB(
-                                                255, 229, 225, 225),
+                                            activeTrackColor:
+                                                const Color.fromARGB(
+                                                    255, 229, 225, 225),
                                             activeColor:
                                                 ColorStyle.colorPrimary,
                                             value: verifyPrepaidOrders,
@@ -239,78 +242,78 @@ class _Features2State extends State<Features2> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
-                                      Text(
+                                      const Text(
                                         'How does it work?',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 15,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
-                                      Text(
+                                      const Text(
                                         'Once you enable the \'Order Verification\' , you will be able to:',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
-                                      Text(
+                                      const Text(
                                         '1. Connect with customers directly form panel to verify their details before shipping the order.',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
-                                      Text(
+                                      const Text(
                                         '2. Verify your COD orders and reduce the chances of returns.',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
-                                      Text(
+                                      const Text(
                                         '3. Keep a track of verified and unverified orders with their call recordings.',
                                         style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 15,
                                       ),
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Enable New POD Template',
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     Switch(
-                                      activeTrackColor:
-                                          Color.fromARGB(255, 229, 225, 225),
+                                      activeTrackColor: const Color.fromARGB(
+                                          255, 229, 225, 225),
                                       activeColor: ColorStyle.colorPrimary,
                                       value: enableNewPODTemplate,
                                       onChanged: (value) {
@@ -322,7 +325,7 @@ class _Features2State extends State<Features2> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Container(
@@ -330,7 +333,8 @@ class _Features2State extends State<Features2> {
                                   padding: const EdgeInsets.all(15.0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: Color.fromARGB(186, 228, 235, 246),
+                                    color: const Color.fromARGB(
+                                        186, 228, 235, 246),
                                   ),
                                   child: Column(
                                     crossAxisAlignment:
@@ -388,14 +392,14 @@ class _Features2State extends State<Features2> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'Post Paid Remittance',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Container(
@@ -412,22 +416,23 @@ class _Features2State extends State<Features2> {
                                   padding: const EdgeInsets.all(10.0),
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       Row(
                                         children: [
-                                          Text(
+                                          const Text(
                                             'Opt for Postpaid Remittance',
                                             style: TextStyle(
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Switch(
-                                            activeTrackColor: Color.fromARGB(
-                                                255, 229, 225, 225),
+                                            activeTrackColor:
+                                                const Color.fromARGB(
+                                                    255, 229, 225, 225),
                                             activeColor:
                                                 ColorStyle.colorPrimary,
                                             value: optForPostpaidRemittance,
@@ -440,7 +445,7 @@ class _Features2State extends State<Features2> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                       Container(
@@ -449,7 +454,7 @@ class _Features2State extends State<Features2> {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(10.0),
-                                          color: Color.fromARGB(
+                                          color: const Color.fromARGB(
                                               186, 228, 235, 246),
                                         ),
                                         child: Column(
@@ -519,7 +524,7 @@ class _Features2State extends State<Features2> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                     ],
@@ -534,14 +539,14 @@ class _Features2State extends State<Features2> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'Auto Secure Shipment',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               Container(
@@ -558,14 +563,14 @@ class _Features2State extends State<Features2> {
                                   padding: const EdgeInsets.all(10.0),
                                   child: Column(
                                     children: [
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Expanded(
+                                          const Expanded(
                                             child: Text(
                                               'Auto Secure all Shipments above Rs 5000',
                                               style: TextStyle(
@@ -575,8 +580,9 @@ class _Features2State extends State<Features2> {
                                             ),
                                           ),
                                           Switch(
-                                            activeTrackColor: Color.fromARGB(
-                                                255, 229, 225, 225),
+                                            activeTrackColor:
+                                                const Color.fromARGB(
+                                                    255, 229, 225, 225),
                                             activeColor:
                                                 ColorStyle.colorPrimary,
                                             value: autoSecurePayments,
@@ -589,7 +595,7 @@ class _Features2State extends State<Features2> {
                                           ),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 20,
                                       ),
                                       Container(
@@ -598,41 +604,41 @@ class _Features2State extends State<Features2> {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(10.0),
-                                          color: Color.fromARGB(
+                                          color: const Color.fromARGB(
                                               186, 228, 235, 246),
                                         ),
                                         child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
+                                            const Text(
                                               'How does it work?',
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 15,
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                               '1. Turn the toggle to automatically secure all shipments with a value greater that Rs. 5000',
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                               '2. The refund for your lost, damaged or stolen shipments will be credited to your bank account upon activation. (Max liability value - Rs. 25,00,000).',
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: 14,
                                               ),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 15,
                                             ),
                                             Text(
@@ -646,7 +652,7 @@ class _Features2State extends State<Features2> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                     ],

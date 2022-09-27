@@ -71,7 +71,7 @@ class IntegrateWithShopify extends StatelessWidget {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12.0),
                 ),
-                child: CustomScrollView(
+                child: const CustomScrollView(
                   slivers: [
                     SliverFillRemaining(
                       hasScrollBody: false,

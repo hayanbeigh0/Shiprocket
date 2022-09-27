@@ -402,13 +402,13 @@ class _EditProfileState extends State<EditProfile> {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
+                        backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                           side: const BorderSide(
                             color: Colors.black,
                           ),
                         ),
-                        primary: Colors.white,
                       ),
                       onPressed: () {
                         Navigator.of(context).pop();

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shiprocket/widgets/text_form_field_container.dart';
+import '/widgets/text_form_field_container.dart';
 
 import '../screens/bottom_navigation.dart';
 import '../screens/signup_screen.dart';
-import '../screens/welcome_screen.dart';
 
 class SigninForm extends StatefulWidget {
   const SigninForm({Key? key}) : super(key: key);
@@ -186,7 +185,7 @@ class _SigninFormState extends State<SigninForm> {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(255, 81, 89, 238),
+                  backgroundColor: const Color.fromARGB(255, 81, 89, 238),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),

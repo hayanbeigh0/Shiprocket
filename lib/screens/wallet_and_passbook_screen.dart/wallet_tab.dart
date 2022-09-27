@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 
-import 'package:introduction_screen/introduction_screen.dart';
-
 import '../../utils/color.dart';
 import '../../widgets/add_money.dart';
 
@@ -33,7 +31,7 @@ class _WalletTabState extends State<WalletTab> {
         SliverFillRemaining(
           hasScrollBody: false,
           child: Container(
-            padding: EdgeInsets.all(
+            padding: const EdgeInsets.all(
               10.0,
             ),
             decoration: BoxDecoration(
@@ -58,7 +56,7 @@ class _WalletTabState extends State<WalletTab> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Stack(
@@ -68,9 +66,9 @@ class _WalletTabState extends State<WalletTab> {
                       right: 0.0,
                       top: 0.0,
                       child: Transform.translate(
-                        offset: Offset(0, -35),
+                        offset: const Offset(0, -35),
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
                             boxShadow: [
@@ -82,7 +80,8 @@ class _WalletTabState extends State<WalletTab> {
                             ],
                           ),
                           child: CircleAvatar(
-                            backgroundColor: Color.fromARGB(255, 235, 233, 233),
+                            backgroundColor:
+                                const Color.fromARGB(255, 235, 233, 233),
                             radius: 35,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
@@ -106,7 +105,8 @@ class _WalletTabState extends State<WalletTab> {
                             color: Colors.grey.withOpacity(0.8),
                             spreadRadius: 4,
                             blurRadius: 8,
-                            offset: Offset(0, 6), // changes position of shadow
+                            offset: const Offset(
+                                0, 6), // changes position of shadow
                           ),
                         ],
                         borderRadius: BorderRadius.circular(12.0),
@@ -114,14 +114,14 @@ class _WalletTabState extends State<WalletTab> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Column(
-                                children: [
+                                children: const [
                                   Text(
                                     'Wallet Balance',
                                     style: TextStyle(
@@ -140,7 +140,7 @@ class _WalletTabState extends State<WalletTab> {
                                 ],
                               ),
                               Column(
-                                children: [
+                                children: const [
                                   Text(
                                     'Amount On Hold',
                                     style: TextStyle(
@@ -160,39 +160,37 @@ class _WalletTabState extends State<WalletTab> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.0),
                             child: Divider(
                               color: Colors.grey,
                               height: 5,
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Usable Balance',
                             style: TextStyle(
                               fontSize: 17,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          Text(
+                          const Text(
                             '₹0.00',
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 27.0),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 27.0),
                             child: Text(
                               'You must maintain the minimum balance of Rs. 100 in your wallet to ship an order.',
                               textAlign: TextAlign.center,
@@ -203,7 +201,7 @@ class _WalletTabState extends State<WalletTab> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Text(
@@ -214,7 +212,7 @@ class _WalletTabState extends State<WalletTab> {
                               color: ColorStyle.colorPrimary,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                         ],
@@ -225,14 +223,15 @@ class _WalletTabState extends State<WalletTab> {
                       right: 0.0,
                       top: 0.0,
                       child: Transform.translate(
-                        offset: Offset(0, -35),
+                        offset: const Offset(0, -35),
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
                           ),
                           child: CircleAvatar(
-                            backgroundColor: Color.fromARGB(255, 235, 233, 233),
+                            backgroundColor:
+                                const Color.fromARGB(255, 235, 233, 233),
                             radius: 35,
                             child: CircleAvatar(
                               backgroundColor: Colors.white,
@@ -249,11 +248,11 @@ class _WalletTabState extends State<WalletTab> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.0),
                   child: Text(
                     'Add Amount',
                     style: TextStyle(
@@ -262,7 +261,7 @@ class _WalletTabState extends State<WalletTab> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Card(
@@ -305,13 +304,12 @@ class _WalletTabState extends State<WalletTab> {
 
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.close,
                                     size: 30,
                                     color: Colors.grey,
                                   ),
                                   onPressed: () {
-                                    print(rechargeAmountController.text);
                                     setState(() {
                                       val = int.parse(
                                           rechargeAmountController.text);
@@ -480,7 +478,7 @@ class _WalletTabState extends State<WalletTab> {
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             elevation: 0,
-                            primary: ColorStyle.colorPrimaryLight,
+                            backgroundColor: ColorStyle.colorPrimaryLight,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(7.0),
                             ),
@@ -500,11 +498,11 @@ class _WalletTabState extends State<WalletTab> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.0),
                   child: Text(
                     'Last 3 Transactions',
                     style: TextStyle(
@@ -513,7 +511,7 @@ class _WalletTabState extends State<WalletTab> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Card(
@@ -523,7 +521,7 @@ class _WalletTabState extends State<WalletTab> {
                       12.0,
                     ),
                   ),
-                  child: Container(
+                  child: const SizedBox(
                     height: 140,
                     child: Center(
                       child: Text(

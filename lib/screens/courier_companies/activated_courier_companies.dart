@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:shiprocket/my_bus_icons.dart';
-import 'package:shiprocket/my_icons_icons.dart';
 import 'package:shiprocket/provider/courier_company_provider.dart';
-import 'package:shiprocket/utils/color.dart';
 import 'package:shiprocket/widgets/courier_company_card.dart';
 
 class ActivatedCourierCompanies extends StatefulWidget {
-  ActivatedCourierCompanies({Key? key}) : super(key: key);
+  const ActivatedCourierCompanies({Key? key}) : super(key: key);
 
   @override
   State<ActivatedCourierCompanies> createState() =>

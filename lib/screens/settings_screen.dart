@@ -1,21 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shiprocket/my_icons_icons.dart';
-import 'package:shiprocket/screens/account_details_screen.dart';
-import 'package:shiprocket/screens/bank_account_details_screen.dart';
-import 'package:shiprocket/screens/billing_address_screen.dart';
-import 'package:shiprocket/screens/change_password_screen.dart';
-import 'package:shiprocket/screens/courier_companies/courier_companies.dart';
-import 'package:shiprocket/screens/courier_priorities.dart';
-import 'package:shiprocket/screens/early_cod_screen.dart';
-import 'package:shiprocket/screens/features_screen.dart';
-import 'package:shiprocket/screens/features_screen_2.dart';
-import 'package:shiprocket/screens/gst_invoicing_screen.dart';
-import 'package:shiprocket/screens/invoice_preferences.dart';
-import 'package:shiprocket/screens/kyc_screens/kyc_screen1.dart';
-import 'package:shiprocket/screens/notifications_screen.dart';
-import 'package:shiprocket/screens/shipping_label_preferences.dart';
-import 'package:shiprocket/screens/view_profile_screen.dart';
+import '/screens/account_details_screen.dart';
+import '/screens/bank_account_details_screen.dart';
+import '/screens/billing_address_screen.dart';
+import '/screens/change_password_screen.dart';
+import '/screens/courier_companies/courier_companies.dart';
+import '/screens/courier_priorities.dart';
+import '/screens/early_cod_screen.dart';
+import '/screens/features_screen_2.dart';
+import '/screens/gst_invoicing_screen.dart';
+import '/screens/invoice_preferences.dart';
+import '/screens/kyc_screens/kyc_screen1.dart';
+import '/screens/notifications_screen.dart';
+import '/screens/shipping_label_preferences.dart';
+import '/screens/view_profile_screen.dart';
 import 'package:shiprocket/utils/box_styles.dart';
 import 'package:shiprocket/utils/color.dart';
 
@@ -234,7 +233,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                     onTap: () {
                                       Navigator.of(context)
                                           .push(MaterialPageRoute(
-                                        builder: (context) => BillingAddress(),
+                                        builder: (context) =>
+                                            const BillingAddress(),
                                       ));
                                     },
                                   ),
@@ -298,7 +298,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       Navigator.of(context)
                                           .push(MaterialPageRoute(
                                         builder: (context) =>
-                                            BankAccountDetails(),
+                                            const BankAccountDetails(),
                                       ));
                                     },
                                   ),
@@ -412,7 +412,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 'Set your priorities for features',
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Features2(),
+                                builder: (context) => const Features2(),
                               ));
                             },
                           ),
@@ -474,7 +474,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                       Navigator.of(context)
                                           .push(MaterialPageRoute(
                                         builder: (context) =>
-                                            InvoicePreferences(),
+                                            const InvoicePreferences(),
                                       ));
                                     },
                                   ),

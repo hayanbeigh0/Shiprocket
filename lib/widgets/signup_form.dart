@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shiprocket/screens/signin_screen.dart';
-import 'package:shiprocket/screens/welcome_screen.dart';
 
+import '../screens/signin_screen.dart';
 import '../screens/bottom_navigation.dart';
 import './text_form_field_container.dart';
 
@@ -367,7 +366,7 @@ class _SignupFormState extends State<SignupForm> {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(255, 81, 89, 238),
+                  backgroundColor: const Color.fromARGB(255, 81, 89, 238),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),

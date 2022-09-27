@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:shiprocket/utils/color.dart';
 
 import '../utils/box_styles.dart';
 import '../widgets/text_form_field_container.dart';
 
 class BillingAddress extends StatefulWidget {
-  BillingAddress({Key? key}) : super(key: key);
+  const BillingAddress({Key? key}) : super(key: key);
 
   @override
   State<BillingAddress> createState() => _BillingAddressState();
@@ -85,15 +83,15 @@ class _BillingAddressState extends State<BillingAddress> {
                   ],
                 ),
               ),
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Container(
-                padding: EdgeInsets.all(
+                padding: const EdgeInsets.all(
                   14.0,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(
-                    color: Color.fromARGB(255, 212, 210, 210),
+                    color: const Color.fromARGB(255, 212, 210, 210),
                   ),
                   borderRadius: BorderRadius.circular(12.0),
                 ),
@@ -104,14 +102,14 @@ class _BillingAddressState extends State<BillingAddress> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Choose from an existing Pickup Address if Billing Address is same.',
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           SizedBox(
@@ -153,7 +151,7 @@ class _BillingAddressState extends State<BillingAddress> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 25,
                           ),
                           SizedBox(
@@ -185,21 +183,22 @@ class _BillingAddressState extends State<BillingAddress> {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Text(
+                          const Text(
                             'Add New Address',
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormFieldContainer(
-                            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                            backgroundColor:
+                                const Color.fromARGB(255, 255, 255, 255),
                             textForm: TextFormField(
                               controller: phoneNumberController,
                               autovalidateMode: AutovalidateMode.always,
@@ -254,7 +253,7 @@ class _BillingAddressState extends State<BillingAddress> {
                               : const SizedBox(
                                   height: 0,
                                 ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormFieldContainer(
@@ -302,7 +301,7 @@ class _BillingAddressState extends State<BillingAddress> {
                               : const SizedBox(
                                   height: 0,
                                 ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormFieldContainer(
@@ -531,7 +530,7 @@ class _BillingAddressState extends State<BillingAddress> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: 20,
             ),
             width: double.infinity,
@@ -543,12 +542,12 @@ class _BillingAddressState extends State<BillingAddress> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 45.0,
                         vertical: 15,
                       ),
+                      backgroundColor: Colors.white,
                       elevation: 0,
-                      primary: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                         side: BorderSide(
@@ -571,12 +570,12 @@ class _BillingAddressState extends State<BillingAddress> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 45.0,
                         vertical: 15,
                       ),
+                      backgroundColor: ColorStyle.colorPrimary,
                       elevation: 0,
-                      primary: ColorStyle.colorPrimary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                         side: BorderSide(
@@ -584,7 +583,7 @@ class _BillingAddressState extends State<BillingAddress> {
                         ),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Save',
                       style: TextStyle(
                         fontSize: 20,

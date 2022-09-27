@@ -13,7 +13,7 @@ import '../../widgets/filter_category.dart';
 import '../../widgets/filter_options.dart';
 
 class HelpAndSupport extends StatefulWidget {
-  HelpAndSupport({super.key});
+  const HelpAndSupport({super.key});
 
   @override
   State<HelpAndSupport> createState() => _HelpAndSupportState();
@@ -84,18 +84,18 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
                       children: [
                         Transform.rotate(
                           angle: 3.14 / 2,
-                          child: Icon(
+                          child: const Icon(
                             MyCustomIcons.exchange,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.search,
                           size: 30,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 12,
                         ),
                         GestureDetector(

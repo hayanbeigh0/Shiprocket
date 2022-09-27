@@ -34,7 +34,7 @@ class CommonTopBar extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w600,
             ),

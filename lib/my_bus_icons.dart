@@ -25,6 +25,6 @@ class MyBus {
   static const _kFontFam = 'MyBus';
   static const String? _kFontPkg = null;
 
-  static const IconData shipping_fast =
+  static const IconData shippingFast =
       IconData(0xf48b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

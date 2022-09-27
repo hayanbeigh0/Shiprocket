@@ -46,12 +46,12 @@ class CourierCompanies extends StatelessWidget {
                 const Spacer(),
                 IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.search,
                     size: 30,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 5,
                 ),
               ],
@@ -98,7 +98,7 @@ class CourierCompanies extends StatelessWidget {
                     'All',
                   ),
                 ],
-                views: [
+                views: const [
                   ActivatedCourierCompanies(),
                   DeactivatedCourierCompanies(),
                   AllCourierCompanies()
@@ -128,7 +128,7 @@ class CourierCompanies extends StatelessWidget {
                               color: ColorStyle.colorPrimary,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Text(
@@ -159,7 +159,7 @@ class CourierCompanies extends StatelessWidget {
                             size: 20,
                             color: ColorStyle.colorPrimary,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Text(

@@ -17,7 +17,7 @@ class SignupOptions extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
-                  builder: (context) => BottomNavigation(),
+                  builder: (context) => const BottomNavigation(),
                 ),
                 (route) => false,
               ),
@@ -64,7 +64,7 @@ class SignupOptions extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
-                  builder: (context) => BottomNavigation(),
+                  builder: (context) => const BottomNavigation(),
                 ),
                 (route) => false,
               ),

@@ -91,7 +91,7 @@ class _IntroScrState extends State<IntroScr> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 100,
           )
         ],

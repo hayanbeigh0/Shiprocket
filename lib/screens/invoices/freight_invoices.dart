@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/color.dart';
-
 class FreightInvoices extends StatelessWidget {
   const FreightInvoices({super.key});
 

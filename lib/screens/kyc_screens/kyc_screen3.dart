@@ -160,14 +160,14 @@ class KYCScreen3 extends StatelessWidget {
                                   const SizedBox(
                                     height: 20,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Express KYC',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 15,
                                   ),
                                   SizedBox(
@@ -187,7 +187,7 @@ class KYCScreen3 extends StatelessWidget {
                                         Navigator.of(context)
                                             .push(MaterialPageRoute(
                                           builder: (context) =>
-                                              AdhaarVerification(),
+                                              const AdhaarVerification(),
                                         ));
                                       },
                                       child: Text(
@@ -200,28 +200,28 @@ class KYCScreen3 extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 15,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Get KYC verified in 30 seconds',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w300,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   Row(
-                                    children: [
+                                    children: const [
                                       Expanded(
                                         child: Divider(
                                           color: Colors.grey,
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.all(10.0),
+                                        padding: EdgeInsets.all(10.0),
                                         child: Text(
                                           'OR',
                                           style: TextStyle(
@@ -237,17 +237,17 @@ class KYCScreen3 extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Manual KYC',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 15,
                                   ),
                                   SizedBox(
@@ -267,7 +267,7 @@ class KYCScreen3 extends StatelessWidget {
                                         Navigator.of(context)
                                             .push(MaterialPageRoute(
                                           builder: (context) =>
-                                              DocumentVerification(),
+                                              const DocumentVerification(),
                                         ));
                                       },
                                       child: Text(
@@ -280,17 +280,17 @@ class KYCScreen3 extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Please note that Manual KYC will take up to 2-3 business days to get verified',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w300,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                 ],

@@ -40,7 +40,7 @@ class _ShippingLabelPreferencesState extends State<ShippingLabelPreferences> {
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: ColorStyle.colorPrimary,
+              backgroundColor: ColorStyle.colorPrimary,
             ),
             child: const Text(
               'Save',

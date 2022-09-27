@@ -6,7 +6,7 @@ import 'passbook_tab.dart';
 import 'wallet_tab.dart';
 
 class WalletAndPassbookTab extends StatefulWidget {
-  WalletAndPassbookTab({Key? key}) : super(key: key);
+  const WalletAndPassbookTab({Key? key}) : super(key: key);
 
   @override
   State<WalletAndPassbookTab> createState() => _WalletAndPassbookTabState();

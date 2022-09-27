@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shiprocket/widgets/deliveryPlanCard.dart';
 
 import '../utils/box_styles.dart';
-import '../utils/color.dart';
 
 class EarylyCOD extends StatefulWidget {
   const EarylyCOD({Key? key}) : super(key: key);
@@ -80,17 +79,17 @@ class _EarylyCODState extends State<EarylyCOD> {
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Expanded(
                           child: Container(
                             width: double.infinity,
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
-                                color: Color.fromARGB(255, 212, 210, 210),
+                                color: const Color.fromARGB(255, 212, 210, 210),
                               ),
                               borderRadius: BorderRadius.circular(10.0),
                               boxShadow: [
@@ -98,7 +97,7 @@ class _EarylyCODState extends State<EarylyCOD> {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 0.8,
                                   blurRadius: 2,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
@@ -113,7 +112,7 @@ class _EarylyCODState extends State<EarylyCOD> {
                                     fontSize: 15,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 Container(
@@ -171,7 +170,7 @@ class _EarylyCODState extends State<EarylyCOD> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 const Text(
@@ -181,10 +180,10 @@ class _EarylyCODState extends State<EarylyCOD> {
                                     fontSize: 15,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
-                                Container(
+                                SizedBox(
                                   height: 380,
                                   child: ListView(
                                     shrinkWrap: true,
@@ -224,7 +223,7 @@ class _EarylyCODState extends State<EarylyCOD> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 )
                               ],

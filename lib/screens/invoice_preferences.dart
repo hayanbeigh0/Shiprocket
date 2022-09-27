@@ -9,7 +9,7 @@ import 'package:shiprocket/widgets/text_form_field_container.dart';
 import '../utils/color.dart';
 
 class InvoicePreferences extends StatefulWidget {
-  InvoicePreferences({Key? key}) : super(key: key);
+  const InvoicePreferences({Key? key}) : super(key: key);
 
   @override
   State<InvoicePreferences> createState() => _InvoicePreferencesState();
@@ -42,7 +42,7 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: ColorStyle.colorPrimary,
+              backgroundColor: ColorStyle.colorPrimary,
             ),
             child: const Text(
               'Save',
@@ -60,28 +60,28 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
         topBarTitle: 'Invoices',
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   'Fill in the details below for your Customer Invoices:',
                   style: TextStyle(
                     fontSize: 15.0,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SizedBox(
                   height: 55,
                   child: TextFormFieldContainer(
                     textForm: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         label: Text('CIN Number'),
                         border: InputBorder.none,
                       ),
@@ -89,14 +89,14 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SizedBox(
                   height: 55,
                   child: TextFormFieldContainer(
                     textForm: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         label: Text('Invoice Prefix*'),
                         border: InputBorder.none,
                       ),
@@ -104,14 +104,14 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SizedBox(
                   height: 55,
                   child: TextFormFieldContainer(
                     textForm: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         label: Text('Invoice Suffix*'),
                         border: InputBorder.none,
                       ),
@@ -119,7 +119,7 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 SizedBox(
@@ -164,17 +164,17 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Text(
+                const Text(
                   'Upload your Signature',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Card(
@@ -186,7 +186,7 @@ class _InvoicePreferencesState extends State<InvoicePreferences> {
                       8,
                     ),
                   ),
-                  child: Container(
+                  child: SizedBox(
                     // padding: const EdgeInsets.all(20.0),
                     height: 125,
                     child: image == null

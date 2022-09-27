@@ -6,7 +6,7 @@ import '../utils/box_styles.dart';
 import '../utils/color.dart';
 
 class BankAccountDetails extends StatefulWidget {
-  BankAccountDetails({Key? key}) : super(key: key);
+  const BankAccountDetails({Key? key}) : super(key: key);
 
   @override
   State<BankAccountDetails> createState() => _BankAccountDetailsState();
@@ -89,17 +89,17 @@ class _BankAccountDetailsState extends State<BankAccountDetails> {
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Expanded(
                           child: Container(
                             width: double.infinity,
-                            padding: EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
-                                color: Color.fromARGB(255, 212, 210, 210),
+                                color: const Color.fromARGB(255, 212, 210, 210),
                               ),
                               borderRadius: BorderRadius.circular(10.0),
                               boxShadow: [
@@ -107,31 +107,31 @@ class _BankAccountDetailsState extends State<BankAccountDetails> {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 0.8,
                                   blurRadius: 2,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Column(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
-                                Text(
+                                const Text(
                                   'As a verification process, we will make a transaction of Re.1 to your account. Your account gets verified when the amount is credited.',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 30,
                                 ),
                                 SizedBox(
                                   height: 60,
                                   child: TextFormFieldContainer(
-                                    backgroundColor:
-                                        Color.fromARGB(255, 255, 255, 255),
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 255, 255, 255),
                                     textForm: TextFormField(
                                       controller: beneficiaryNumberController,
                                       autovalidateMode: AutovalidateMode.always,
@@ -188,14 +188,14 @@ class _BankAccountDetailsState extends State<BankAccountDetails> {
                                     : const SizedBox(
                                         height: 0,
                                       ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 SizedBox(
                                   height: 60,
                                   child: TextFormFieldContainer(
-                                    backgroundColor:
-                                        Color.fromARGB(255, 255, 255, 255),
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 255, 255, 255),
                                     textForm: TextFormField(
                                       controller:
                                           confirmBeneficiaryNumberController,
@@ -255,7 +255,7 @@ class _BankAccountDetailsState extends State<BankAccountDetails> {
                                     : const SizedBox(
                                         height: 0,
                                       ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 SizedBox(
@@ -299,14 +299,14 @@ class _BankAccountDetailsState extends State<BankAccountDetails> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 15,
                                 ),
                                 SizedBox(
                                   height: 60,
                                   child: TextFormFieldContainer(
-                                    backgroundColor:
-                                        Color.fromARGB(255, 255, 255, 255),
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 255, 255, 255),
                                     textForm: TextFormField(
                                       controller: ifscCodeController,
                                       autovalidateMode: AutovalidateMode.always,
@@ -380,7 +380,7 @@ class _BankAccountDetailsState extends State<BankAccountDetails> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               elevation: 0,
-                              primary: ColorStyle.colorPrimary,
+                              backgroundColor: ColorStyle.colorPrimary,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8.0),
                               ),

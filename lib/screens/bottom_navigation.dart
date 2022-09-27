@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:shiprocket/screens/more_screen.dart';
-import 'package:shiprocket/screens/orders_screen.dart';
-import 'package:shiprocket/screens/shipments_screen.dart';
-import 'package:shiprocket/screens/welcome_screen.dart';
+import '/screens/more_screen.dart';
+import '/screens/orders_screen.dart';
+import '/screens/shipments_screen.dart';
+import '/screens/welcome_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
       'Index 4: Help',
       style: optionStyle,
     ),
-    MoreScreen(),
+    const MoreScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -76,5 +75,4 @@ class _BottomNavigationState extends State<BottomNavigation> {
       ),
     );
   }
-  
 }

@@ -124,7 +124,7 @@ class CustomersScreen extends StatelessWidget {
                           horizontal: 30.0,
                           vertical: 12.0,
                         ),
-                        primary: ColorStyle.colorPrimary,
+                        backgroundColor: ColorStyle.colorPrimary,
                       ),
                       onPressed: () {
                         Navigator.of(context).push(
@@ -277,8 +277,9 @@ class CustomersScreen extends StatelessWidget {
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                             elevation: 0,
+                                            backgroundColor:
+                                                ColorStyle.colorPrimary,
                                             padding: const EdgeInsets.all(12.0),
-                                            primary: ColorStyle.colorPrimary,
                                           ),
                                           onPressed: () {},
                                           child: const Text(

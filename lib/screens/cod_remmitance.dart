@@ -25,50 +25,48 @@ class CODRemmitance extends StatelessWidget {
   Widget build(BuildContext context) {
     selectedList = filterOptionsByDate;
     return Scaffold(
-        body: Container(
-      child: Column(
-        children: [
-          CommonTopBar(
-            title: 'COD Remmitance',
-            trailingWidget: GestureDetector(
-              onTap: () {
-                showFilterModalSheet(context);
-              },
-              child: Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                ),
-                width: 24,
+        body: Column(
+      children: [
+        CommonTopBar(
+          title: 'COD Remmitance',
+          trailingWidget: GestureDetector(
+            onTap: () {
+              showFilterModalSheet(context);
+            },
+            child: Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 12,
+              ),
+              width: 24,
+              child: Image.asset(
+                'assets/controls.png',
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              shadowColor: const Color.fromARGB(77, 75, 33, 243),
+              borderOnForeground: true,
+              child: Center(
                 child: Image.asset(
-                  'assets/controls.png',
+                  "assets/no-record.png",
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                shadowColor: const Color.fromARGB(77, 75, 33, 243),
-                borderOnForeground: true,
-                child: Center(
-                  child: Image.asset(
-                    "assets/no-record.png",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 60,
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 60,
+        ),
+      ],
     ));
   }
 

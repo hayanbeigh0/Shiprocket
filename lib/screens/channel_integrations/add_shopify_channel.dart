@@ -44,7 +44,7 @@ class AddShopifyChannel extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
@@ -83,11 +83,11 @@ class AddShopifyChannel extends StatelessWidget {
                         children: [
                           Container(
                             width: double.infinity,
-                            padding: EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
-                                color: Color.fromARGB(255, 212, 210, 210),
+                                color: const Color.fromARGB(255, 212, 210, 210),
                               ),
                               borderRadius: BorderRadius.circular(10.0),
                               boxShadow: [
@@ -95,20 +95,20 @@ class AddShopifyChannel extends StatelessWidget {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 0.8,
                                   blurRadius: 2,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
                             ),
                             child: Container(
                               decoration: BoxDecoration(
-                                color: Color.fromARGB(43, 82, 121, 247),
+                                color: const Color.fromARGB(43, 82, 121, 247),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              padding: EdgeInsets.all(14.0),
+                              padding: const EdgeInsets.all(14.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                                children: const [
                                   SizedBox(
                                     height: 5,
                                   ),
@@ -179,13 +179,15 @@ class AddShopifyChannel extends StatelessWidget {
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.symmetric(vertical: 20.0),
+                              margin:
+                                  const EdgeInsets.symmetric(vertical: 20.0),
                               width: double.infinity,
-                              padding: EdgeInsets.all(13.0),
+                              padding: const EdgeInsets.all(13.0),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
-                                  color: Color.fromARGB(255, 212, 210, 210),
+                                  color:
+                                      const Color.fromARGB(255, 212, 210, 210),
                                 ),
                                 borderRadius: BorderRadius.circular(10.0),
                                 boxShadow: [
@@ -193,7 +195,7 @@ class AddShopifyChannel extends StatelessWidget {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 0.8,
                                     blurRadius: 2,
-                                    offset: Offset(
+                                    offset: const Offset(
                                       0,
                                       3,
                                     ), // changes position of shadow
@@ -203,41 +205,41 @@ class AddShopifyChannel extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 5,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Store URL',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Please enter your store ur for SHOPIFY.',
                                     style: TextStyle(
                                       fontSize: 13,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 15,
                                   ),
                                   SizedBox(
                                     height: 60,
                                     child: TextFormFieldContainer(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 255, 255, 255),
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 255, 255, 255),
                                       textForm: TextFormField(
                                         controller: urlController,
                                         autovalidateMode:
                                             AutovalidateMode.always,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           hintText:
                                               'Enter our store URL: https://example.myshopify.com',
-                                          hintStyle: const TextStyle(
+                                          hintStyle: TextStyle(
                                             color: Color.fromARGB(
                                                 255, 111, 111, 112),
                                             fontSize: 14,
@@ -254,16 +256,16 @@ class AddShopifyChannel extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Please click on the "Connect to Shopify" button to integrate to our shopify account.',
                                     style: TextStyle(
                                       fontSize: 13,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   SizedBox(
@@ -281,7 +283,7 @@ class AddShopifyChannel extends StatelessWidget {
                                         ),
                                       ),
                                       onPressed: () {},
-                                      child: Text(
+                                      child: const Text(
                                         'Connect to Shopify',
                                         style: TextStyle(
                                           fontSize: 15,

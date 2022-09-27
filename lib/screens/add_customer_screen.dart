@@ -851,7 +851,7 @@ class _AddCustomerState extends State<AddCustomer> {
                           width: double.infinity,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              primary: ColorStyle.colorPrimary,
+                              backgroundColor: ColorStyle.colorPrimary,
                               padding: const EdgeInsets.all(17.0),
                             ),
                             onPressed: () {

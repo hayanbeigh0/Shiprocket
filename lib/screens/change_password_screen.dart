@@ -295,7 +295,7 @@ class _ChangePasswordState extends State<ChangePassword> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                primary: ColorStyle.colorPrimary,
+                backgroundColor: ColorStyle.colorPrimary,
                 padding: const EdgeInsets.all(
                   18.0,
                 ),

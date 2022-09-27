@@ -74,7 +74,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         child: GestureDetector(
                           onTap: () =>
                               Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => WalletAndPassbookTab(),
+                            builder: (context) => const WalletAndPassbookTab(),
                           )),
                           child: Row(
                             children: const [

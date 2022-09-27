@@ -54,10 +54,10 @@ class ShareFeedback extends StatelessWidget {
                         ),
                       ],
                     ),
-                    padding: EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           'We would love to hear your feedback',
                           style: TextStyle(
@@ -95,7 +95,7 @@ class ShareFeedback extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(child: SizedBox()),
+                  const Expanded(child: SizedBox()),
                   SizedBox(
                     width: double.infinity,
                     height: 55,
@@ -107,7 +107,7 @@ class ShareFeedback extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Submit',
                         style: TextStyle(
                           fontSize: 18,
@@ -115,7 +115,7 @@ class ShareFeedback extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                 ],

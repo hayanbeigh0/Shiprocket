@@ -10,7 +10,7 @@ import '../../utils/color.dart';
 import '../../widgets/text_form_field_container.dart';
 
 class DocumentVerification extends StatefulWidget {
-  DocumentVerification({super.key});
+  const DocumentVerification({super.key});
 
   @override
   State<DocumentVerification> createState() => _DocumentVerificationState();
@@ -66,7 +66,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Expanded(
@@ -147,10 +147,10 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
-                            Text(
+                            const Text(
                               'Upload the 2 documents below to verify your KYC.',
                               style: TextStyle(
                                 fontSize: 16,
@@ -160,7 +160,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Padding(
@@ -168,23 +168,23 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Document 1',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Container(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(6.0),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 10,
                                     spreadRadius: 1,
@@ -195,14 +195,14 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Document Type',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   SizedBox(
@@ -246,17 +246,17 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Document Images',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   Row(
@@ -269,7 +269,8 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                   color: ColorStyle.borderGrey,
                                                   strokeWidth: 1.5,
                                                   dashPattern: const [6],
-                                                  radius: Radius.circular(8.0),
+                                                  radius: const Radius.circular(
+                                                      8.0),
                                                   child: SizedBox(
                                                     // width: double.infinity,
                                                     height:
@@ -307,7 +308,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                                 color: ColorStyle
                                                                     .colorPrimary,
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                 height: 8,
                                                               ),
                                                               SizedBox(
@@ -370,7 +371,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                 ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 15,
                                       ),
                                       Expanded(
@@ -381,7 +382,8 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                   color: ColorStyle.borderGrey,
                                                   strokeWidth: 1.5,
                                                   dashPattern: const [6],
-                                                  radius: Radius.circular(8.0),
+                                                  radius: const Radius.circular(
+                                                      8.0),
                                                   child: SizedBox(
                                                     height:
                                                         MediaQuery.of(context)
@@ -418,7 +420,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                                 color: ColorStyle
                                                                     .colorPrimary,
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                 height: 8,
                                                               ),
                                                               SizedBox(
@@ -483,7 +485,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 40,
                                   ),
                                   SizedBox(
@@ -494,7 +496,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       children: [
                                         TextButton(
                                           style: TextButton.styleFrom(
-                                            padding: EdgeInsets.symmetric(
+                                            padding: const EdgeInsets.symmetric(
                                               vertical: 15.0,
                                               horizontal: 24.0,
                                             ),
@@ -519,7 +521,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                 ],
@@ -528,7 +530,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Padding(
@@ -536,23 +538,23 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Document 2',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Container(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(6.0),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 10,
                                     spreadRadius: 1,
@@ -563,14 +565,14 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Document Type',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                   SizedBox(
@@ -614,17 +616,17 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Document Images',
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   Row(
@@ -637,7 +639,8 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                   color: ColorStyle.borderGrey,
                                                   strokeWidth: 1.5,
                                                   dashPattern: const [6],
-                                                  radius: Radius.circular(8.0),
+                                                  radius: const Radius.circular(
+                                                      8.0),
                                                   child: SizedBox(
                                                     // width: double.infinity,
                                                     height:
@@ -675,7 +678,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                                 color: ColorStyle
                                                                     .colorPrimary,
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                 height: 8,
                                                               ),
                                                               SizedBox(
@@ -738,7 +741,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                 ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 15,
                                       ),
                                       Expanded(
@@ -749,7 +752,8 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                   color: ColorStyle.borderGrey,
                                                   strokeWidth: 1.5,
                                                   dashPattern: const [6],
-                                                  radius: Radius.circular(8.0),
+                                                  radius: const Radius.circular(
+                                                      8.0),
                                                   child: SizedBox(
                                                     height:
                                                         MediaQuery.of(context)
@@ -786,7 +790,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                                                 color: ColorStyle
                                                                     .colorPrimary,
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                 height: 8,
                                                               ),
                                                               SizedBox(
@@ -851,7 +855,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 40,
                                   ),
                                   SizedBox(
@@ -863,12 +867,12 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                         TextButton(
                                           style: TextButton.styleFrom(
                                             disabledBackgroundColor:
-                                                Color.fromARGB(
+                                                const Color.fromARGB(
                                                     255, 235, 234, 234),
                                             disabledForegroundColor:
-                                                Color.fromARGB(
+                                                const Color.fromARGB(
                                                     255, 184, 184, 184),
-                                            padding: EdgeInsets.symmetric(
+                                            padding: const EdgeInsets.symmetric(
                                               vertical: 15.0,
                                               horizontal: 24.0,
                                             ),
@@ -899,7 +903,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                 ],
@@ -908,7 +912,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Padding(
@@ -917,12 +921,12 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(6.0),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 10,
                                     spreadRadius: 1,
@@ -935,7 +939,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                                 text: TextSpan(
                                   text:
                                       'By clicking "Submit & Verify Documents" you agree to Shiprocket\'s KYC',
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 13.5,
                                     color: Colors.black,
                                   ),
@@ -954,7 +958,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
@@ -974,7 +978,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           onPressed: imageFront == null || imageBack == null
                               ? null
                               : () {},
-                          child: Text(
+                          child: const Text(
                             'Submit and Verify Documents',
                             style: TextStyle(
                               fontSize: 17,
@@ -982,7 +986,7 @@ class _DocumentVerificationState extends State<DocumentVerification> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 50,
                       ),
                     ],

@@ -375,7 +375,7 @@ class _ViewProfileState extends State<ViewProfile> {
                         });
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(174, 95, 29, 225),
+                        backgroundColor: const Color.fromARGB(174, 95, 29, 225),
                         elevation: 0,
                       ),
                       child: const Text(

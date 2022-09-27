@@ -52,40 +52,38 @@ class WeightDiscrepancy extends StatelessWidget {
   Widget build(BuildContext context) {
     selectedList = filterOptionsByStatus;
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            CommonTopBar(
-              title: 'Weight Discrepancy',
-              trailingWidget: Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                ),
-                width: 24,
-                child: GestureDetector(
-                  onTap: () => showFilterModalSheet(context),
-                  child: Image.asset(
-                    'assets/controls.png',
-                  ),
+      body: Column(
+        children: [
+          CommonTopBar(
+            title: 'Weight Discrepancy',
+            trailingWidget: Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 12,
+              ),
+              width: 24,
+              child: GestureDetector(
+                onTap: () => showFilterModalSheet(context),
+                child: Image.asset(
+                  'assets/controls.png',
                 ),
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Image.asset(
-                    "assets/no-weight-discrepancies.jpeg",
-                    fit: BoxFit.fitWidth,
-                  ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: Image.asset(
+                  "assets/no-weight-discrepancies.jpeg",
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),
-            SizedBox(
-              height: 60,
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+        ],
       ),
     );
   }

@@ -306,7 +306,7 @@ class _QuickRechargeState extends State<QuickRecharge> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
-                          primary: colorPrimaryLight,
+                          backgroundColor: colorPrimaryLight,
                         ),
                         onPressed: () {},
                         child: const Text(
