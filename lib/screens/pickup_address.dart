@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shiprocket/screens/add_pickup_address.dart';
 import 'package:shiprocket/utils/color.dart';
 
 import '../widgets/common_top_bar.dart';
@@ -204,7 +205,11 @@ class PickupAddress extends StatelessWidget {
                           borderRadius: BorderRadius.circular(7),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => AddPickupAddress(),
+                        ));
+                      },
                       child: Text(
                         'Add Pickup Address',
                         style: TextStyle(

@@ -26,12 +26,23 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<string>YES</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Need camera permissions</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Need camera permissions</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need camera permissions</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need location permissions</string>
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>YourPurposeKey</key>
+		<string>The example App requires temporary access to the device's precise location.</string>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location permissions</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>

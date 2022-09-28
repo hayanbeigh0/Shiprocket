@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:shiprocket/screens/add_pickup_address.dart';
 import 'package:shiprocket/screens/kyc_screens/kyc_screen1.dart';
 import 'package:shiprocket/provider/added_customer.dart';
 import 'package:shiprocket/provider/courier_company_provider.dart';
@@ -14,6 +15,7 @@ import 'package:shiprocket/screens/dashboard_screen/dashboard_screen.dart';
 import 'package:shiprocket/screens/introduction_screen.dart';
 import 'package:shiprocket/screens/more_screen.dart';
 import 'package:shiprocket/screens/notifications_screen.dart';
+import 'package:shiprocket/screens/pickup_address.dart';
 import 'package:shiprocket/screens/settings_screen.dart';
 import 'package:shiprocket/screens/shiprocket_trainings.dart';
 import 'package:shiprocket/screens/upgrade_plan.dart';
@@ -52,7 +54,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: IntroScreen(),
+        home: AddPickupAddress(),
       ),
     );
   }

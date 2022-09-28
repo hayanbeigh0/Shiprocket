@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import '../chart/bar_model.dart';
-import 'bar_model.dart';
 
 class BarsChart extends StatefulWidget {
   const BarsChart({Key? key}) : super(key: key);
