@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shiprocket/my_icons_icons.dart';
+import 'package:shiprocket/screens/pickup_address.dart';
 import '/screens/account_details_screen.dart';
 import '/screens/bank_account_details_screen.dart';
 import '/screens/billing_address_screen.dart';
@@ -335,7 +336,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             segmentTitle: 'Pickup Addresses',
                             segmentDescription:
                                 'Add Pickup Addresses to your orders',
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PickupAddress(),
+                              ));
+                            },
                           ),
                           SettingsScreenSegment(
                             icon: Icon(

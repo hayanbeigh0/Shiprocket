@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shiprocket/my_bus_icons.dart';
-import 'package:shiprocket/my_icons_icons.dart';
-import 'package:shiprocket/utils/color.dart';
+import '/my_bus_icons.dart';
+import '/my_icons_icons.dart';
+import '/utils/color.dart';
 
 import '../utils/box_styles.dart';
 
