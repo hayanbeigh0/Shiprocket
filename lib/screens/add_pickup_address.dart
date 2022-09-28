@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geocoding/geocoding.dart';
@@ -734,6 +736,12 @@ class _MapViewState extends State<MapView> {
             ),
             zoom: 14.4746,
           ),
+          scrollGesturesEnabled: true,
+          gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
+            Factory<OneSequenceGestureRecognizer>(
+              () => EagerGestureRecognizer(),
+            ),
+          },
           myLocationEnabled: true,
           myLocationButtonEnabled: true,
           onMapCreated: (controller) async {
