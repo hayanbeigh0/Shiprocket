@@ -42,18 +42,20 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
   TextEditingController stateController = TextEditingController();
   TextEditingController countryController = TextEditingController();
 
+  late Future<Position> position;
+  late LatLng pickedLocation;
+  bool setAsPrimaryAddress = false;
+  bool addressStatus = false;
+  bool useDifferentAddressAsRtoAdress = false;
+  var addresses = [
+    "Primary: 60/5 ,Yusuf Sarai Market, Aurobindo Marg,Green Park New Delhi, 110016",
+  ];
   @override
   void initState() {
     checkLocationPermissions();
     position = getCurrentLoc();
     super.initState();
   }
-
-  late Future<Position> position;
-  late LatLng pickedLocation;
-  bool setAsPrimaryAddress = false;
-  bool addressStatus = false;
-  bool useDifferentAddressAsRtoAdress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -627,6 +629,207 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                         SizedBox(
                           height: 20,
                         ),
+                        useDifferentAddressAsRtoAdress
+                            ? Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 14.0),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Note: RTO Address is only applicable in Xpressbees, Delhivery and Ecom express',
+                                      style: TextStyle(
+                                        fontSize: 13.2,
+                                        color:
+                                            Color.fromARGB(255, 123, 123, 123),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Container(
+                                      width: double.infinity,
+                                      padding: EdgeInsets.all(13.0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: ColorStyle.borderGrey,
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4,
+                                            spreadRadius: 2,
+                                            color: Color.fromARGB(
+                                                58, 158, 158, 158),
+                                          )
+                                        ],
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            'Select Existing Address',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: Color.fromARGB(
+                                                  255, 49, 49, 49),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: TextFormFieldContainer(
+                                              textForm: DropdownButtonFormField(
+                                                isExpanded: true,
+                                                iconSize: 30,
+                                                icon: Transform.translate(
+                                                  offset: const Offset(
+                                                    0,
+                                                    -15,
+                                                  ),
+                                                  child: const Icon(
+                                                    Icons.keyboard_arrow_down,
+                                                  ),
+                                                ),
+                                                decoration:
+                                                    const InputDecoration(
+                                                  labelText:
+                                                      "Address Nick Name",
+                                                  labelStyle: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 111, 111, 112),
+                                                    fontSize: 14,
+                                                  ),
+                                                  border: InputBorder.none,
+                                                ),
+                                                items: addresses
+                                                    .map(
+                                                      (item) =>
+                                                          DropdownMenuItem<
+                                                              String>(
+                                                        value: item,
+                                                        child: Text(
+                                                          item,
+                                                          maxLines: 1,
+                                                          style:
+                                                              const TextStyle(
+                                                            fontSize: 14,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    )
+                                                    .toList(),
+                                                onChanged: (value) {},
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 30,
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Expanded(
+                                                  child: Divider(
+                                                    color: Colors.grey,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text('OR'),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Expanded(
+                                                  child: Divider(
+                                                    color: Colors.grey,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 30,
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                SizedBox(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.5,
+                                                  height: 45,
+                                                  child: TextButton(
+                                                    style: TextButton.styleFrom(
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(10),
+                                                        side: BorderSide(
+                                                          color: ColorStyle
+                                                              .colorPrimary,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    onPressed: () {},
+                                                    child: Text(
+                                                      '+Add New Address',
+                                                      style: TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: ColorStyle
+                                                            .colorPrimary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 30,
+                                          ),
+                                          SizedBox(
+                                            width: double.infinity,
+                                            child: Text(
+                                              'Note: New address will be saved as a pickup address',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            : SizedBox(),
                         Expanded(
                           child: SizedBox(),
                         ),
@@ -657,7 +860,7 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 40,
                         ),
                       ],
                     ),
@@ -669,7 +872,7 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
         ],
       ),
     );
-  }}
+  }
 
   Future<Position> getCurrentLoc() async {
     Position pos = await Geolocator.getCurrentPosition(
