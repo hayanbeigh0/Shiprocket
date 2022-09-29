@@ -669,7 +669,7 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
         ],
       ),
     );
-  }
+  }}
 
   Future<Position> getCurrentLoc() async {
     Position pos = await Geolocator.getCurrentPosition(
