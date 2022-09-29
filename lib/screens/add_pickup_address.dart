@@ -789,7 +789,99 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                                                         ),
                                                       ),
                                                     ),
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius.only(
+                                                            topLeft:
+                                                                Radius.circular(
+                                                                    30),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    30),
+                                                          ),
+                                                        ),
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return Container(
+                                                            height: MediaQuery.of(
+                                                                        context)
+                                                                    .size
+                                                                    .height *
+                                                                0.85,
+                                                            child: Column(
+                                                              children: [
+                                                                SizedBox(
+                                                                  height: 17,
+                                                                ),
+                                                                Container(
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .symmetric(
+                                                                    horizontal:
+                                                                        14.0,
+                                                                  ),
+                                                                  width: double
+                                                                      .infinity,
+                                                                  child: Row(
+                                                                    children: [
+                                                                      Text(
+                                                                        'RTO Contact Info',
+                                                                        style:
+                                                                            TextStyle(
+                                                                          fontSize:
+                                                                              18,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                      ),
+                                                                      Spacer(),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            30,
+                                                                        child:
+                                                                            IconButton(
+                                                                          onPressed:
+                                                                              () {
+                                                                            Navigator.of(context).pop();
+                                                                          },
+                                                                          icon:
+                                                                              Icon(
+                                                                            Icons.close,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                                CustomScrollView(
+                                                                  slivers: [
+                                                                    SliverFillRemaining(
+                                                                      hasScrollBody:
+                                                                          false,
+                                                                      child:
+                                                                          Expanded(
+                                                                        child:
+                                                                            Container(
+                                                                          child:
+                                                                              Column(
+                                                                            children: [],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                )
+                                                              ],
+                                                            ),
+                                                          );
+                                                        },
+                                                      );
+                                                    },
                                                     child: Text(
                                                       '+Add New Address',
                                                       style: TextStyle(
