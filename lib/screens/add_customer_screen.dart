@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:shiprocket/models/address_list.dart';
 import 'package:shiprocket/provider/added_customer.dart';
 
 import '../models/added_customer.dart';
@@ -925,6 +926,17 @@ class _AddCustomerState extends State<AddCustomer> {
                                   state: stateController.text,
                                   country: countryController.text,
                                   createdAt: DateTime.now().toString(),
+                                  addressList: [
+                                    AddressList(
+                                      houseNumber: houseNumberController.text,
+                                      streetName: streetNameController.text,
+                                      landmark: landmarkController.text,
+                                      pincode: pincodeController.text,
+                                      city: cityController.text,
+                                      state: stateController.text,
+                                      country: countryController.text,
+                                    ),
+                                  ],
                                 ),
                               );
                               Navigator.of(context).pop();

@@ -97,20 +97,20 @@ class _MapViewState extends State<MapView> {
         const MapSearchField(),
         Center(
           child: Transform.translate(
-            offset: Offset(0, -45),
+            offset: const Offset(0, -45),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 40,
                       ),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 95, 82, 210),
+                        color: const Color.fromARGB(255, 95, 82, 210),
                         border: Border.all(
-                          color: Color.fromARGB(255, 95, 82, 210),
+                          color: const Color.fromARGB(255, 95, 82, 210),
                         ),
                       ),
                       height: 40,
@@ -120,12 +120,12 @@ class _MapViewState extends State<MapView> {
                           if (snapshot.hasData) {
                             return Text(
                               '${widget.infoMsg} ${snapshot.data![0].street},${snapshot.data![0].subLocality}, ${snapshot.data![0].locality}, ${snapshot.data![0].postalCode}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                               ),
                             );
                           }
-                          return Text('Loading');
+                          return const Text('Loading');
                         },
                       ),
                     ),
@@ -145,7 +145,8 @@ class _MapViewState extends State<MapView> {
                               angle: 3.14,
                               child: CustomPaint(
                                 painter: TrianglePainter(
-                                  strokeColor: Color.fromARGB(255, 95, 82, 210),
+                                  strokeColor:
+                                      const Color.fromARGB(255, 95, 82, 210),
                                   strokeWidth: 10,
                                   paintingStyle: PaintingStyle.fill,
                                 ),
@@ -161,7 +162,7 @@ class _MapViewState extends State<MapView> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 13,
                 ),
                 SizedBox(
@@ -224,10 +225,10 @@ class MapSearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.all(12.0),
+      margin: const EdgeInsets.all(12.0),
       child: Form(
         key: _formKey,
-        child: TextFormFieldContainer(
+        child: const TextFormFieldContainer(
           textForm: Center(
             child: TextField(
               decoration: InputDecoration(

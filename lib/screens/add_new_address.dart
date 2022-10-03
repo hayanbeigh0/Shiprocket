@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:shiprocket/models/address_list.dart';
+import 'package:shiprocket/provider/added_customer.dart';
 import 'package:shiprocket/screens/map_view.dart';
 
 import '../utils/box_styles.dart';
@@ -12,14 +15,18 @@ import '../utils/functions/location_permissions.dart';
 import '../widgets/text_form_field_container.dart';
 
 class AddNewAddress extends StatefulWidget {
-  AddNewAddress({super.key});
+  const AddNewAddress({
+    super.key,
+    required this.index,
+  });
 
   @override
   State<AddNewAddress> createState() => _AddNewAddressState();
+  final int index;
 }
 
 class _AddNewAddressState extends State<AddNewAddress> {
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
 
   TextEditingController addressNicknameController = TextEditingController();
 
@@ -67,8 +74,13 @@ class _AddNewAddressState extends State<AddNewAddress> {
     super.initState();
   }
 
+  late final customerAddressList;
+
   @override
   Widget build(BuildContext context) {
+    customerAddressList = Provider.of<AddedCustomerProvider>(context)
+        .addedCustomers[widget.index]
+        .addressList;
     return Scaffold(
       body: Column(
         children: [
@@ -92,9 +104,9 @@ class _AddNewAddressState extends State<AddNewAddress> {
                 const SizedBox(
                   width: 20,
                 ),
-                Text(
+                const Text(
                   'Add New Address',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                   ),
@@ -195,12 +207,12 @@ class _AddNewAddressState extends State<AddNewAddress> {
                             },
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Row(
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             SizedBox(
@@ -215,7 +227,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                     child: Text(
                                       '${snapshot.data![0].street},${snapshot.data![0].subLocality}, ${snapshot.data![0].locality}',
                                       maxLines: 1,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w500,
                                         color: Color.fromARGB(195, 0, 0, 0),
@@ -223,19 +235,19 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                     ),
                                   );
                                 }
-                                return Text('Loading');
+                                return const Text('Loading');
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 20,
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15.0),
                           child: Text(
                             'Note: For local deliveries, the distance between pickup and delivery locations should be within 50 kms.',
                             style: TextStyle(
@@ -245,11 +257,11 @@ class _AddNewAddressState extends State<AddNewAddress> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15.0),
                           child: Text(
                             'Delivery Address',
                             style: TextStyle(
@@ -259,14 +271,13 @@ class _AddNewAddressState extends State<AddNewAddress> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         StreamBuilder<List<Placemark>>(
                           stream: placemarkController.stream,
                           builder: (context, snapshot) {
                             if (snapshot.hasData) {
-                              print(snapshot.data.toString());
                               houseNumberController.text =
                                   snapshot.data!.first.subLocality.toString();
                               pincodeController.text =
@@ -282,11 +293,12 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                   snapshot.data!.first.street.toString();
                             }
                             return Container(
-                              padding: EdgeInsets.all(14),
-                              margin: EdgeInsets.symmetric(horizontal: 14),
+                              padding: const EdgeInsets.all(14),
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 14),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(6),
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 3,
                                     spreadRadius: 1,
@@ -302,7 +314,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                     textForm: Center(
                                       child: TextField(
                                         controller: houseNumberController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText:
                                               'House no /Flat no. Building Name (299/15, B-Block, Van Vihar)',
@@ -313,14 +325,14 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   TextFormFieldContainer(
                                     textForm: Center(
                                       child: TextField(
                                         controller: streetNameController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText:
                                               'locality / Street Name (Optional)',
@@ -331,14 +343,14 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   TextFormFieldContainer(
                                     textForm: Center(
                                       child: TextField(
                                         controller: landmarkController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText: 'Landmark (Optional)',
                                           labelStyle: TextStyle(
@@ -348,14 +360,14 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   TextFormFieldContainer(
                                     textForm: Center(
                                       child: TextField(
                                         controller: pincodeController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText: 'Pincode',
                                           labelStyle: TextStyle(
@@ -365,7 +377,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   TextFormFieldContainer(
@@ -373,7 +385,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       child: TextField(
                                         enabled: false,
                                         controller: cityController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText: 'City',
                                           labelStyle: TextStyle(
@@ -383,7 +395,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   TextFormFieldContainer(
@@ -391,7 +403,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       child: TextField(
                                         enabled: false,
                                         controller: stateController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText: 'State',
                                           labelStyle: TextStyle(
@@ -401,7 +413,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   TextFormFieldContainer(
@@ -409,7 +421,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       child: TextField(
                                         enabled: false,
                                         controller: countryController,
-                                        decoration: InputDecoration(
+                                        decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           labelText: 'Country',
                                           labelStyle: TextStyle(
@@ -419,7 +431,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 10,
                                   ),
                                 ],
@@ -427,17 +439,17 @@ class _AddNewAddressState extends State<AddNewAddress> {
                             );
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Expanded(
+                        const Expanded(
                           child: SizedBox(),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Container(
-                          margin: EdgeInsets.symmetric(
+                          margin: const EdgeInsets.symmetric(
                             horizontal: 14,
                           ),
                           width: double.infinity,
@@ -450,8 +462,22 @@ class _AddNewAddressState extends State<AddNewAddress> {
                                 borderRadius: BorderRadius.circular(8),
                               ),
                             ),
-                            onPressed: () {},
-                            child: Text(
+                            onPressed: () {
+                              customerAddressList.add(
+                                AddressList(
+                                  houseNumber: houseNumberController.text,
+                                  streetName: streetNameController.text,
+                                  landmark: landmarkController.text,
+                                  pincode: pincodeController.text,
+                                  city: cityController.text,
+                                  state: stateController.text,
+                                  country: countryController.text,
+                                ),
+                              );
+                              print(customerAddressList.length);
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text(
                               'Save Address',
                               style: TextStyle(
                                 fontSize: 18,
@@ -459,7 +485,7 @@ class _AddNewAddressState extends State<AddNewAddress> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                       ],

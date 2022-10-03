@@ -1,3 +1,5 @@
+import 'package:shiprocket/models/address_list.dart';
+
 class AddedCustomer {
   String firstName;
   String lastName;
@@ -12,6 +14,7 @@ class AddedCustomer {
   final String state;
   final String country;
   final String createdAt;
+  final List<AddressList> addressList;
 
   AddedCustomer({
     required this.firstName,
@@ -27,5 +30,6 @@ class AddedCustomer {
     required this.state,
     required this.country,
     required this.createdAt,
+    required this.addressList,
   });
 }

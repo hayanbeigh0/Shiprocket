@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shiprocket/provider/added_customer.dart';
 import 'package:shiprocket/screens/add_customer_screen.dart';
-import 'package:shiprocket/screens/customer_detail_screen.dart';
+import 'package:shiprocket/screens/customer_detail.dart';
+// import 'package:shiprocket/screens/customer_detail_screen.dart';
 import 'package:shiprocket/utils/color.dart';
 
 class CustomersScreen extends StatelessWidget {
@@ -168,7 +169,7 @@ class CustomersScreen extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => CustomerDetail(
+                              builder: (context) => CustomerDetailScreen(
                                 index: index,
                               ),
                             ),

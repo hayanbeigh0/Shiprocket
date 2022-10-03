@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shiprocket/models/added_customer.dart';
+import 'package:shiprocket/models/address_list.dart';
 
 class AddedCustomerProvider with ChangeNotifier {
   List<AddedCustomer> addedCustomers = [
@@ -15,6 +16,17 @@ class AddedCustomerProvider with ChangeNotifier {
       state: 'Jammu & Kashmir',
       country: 'India',
       createdAt: DateTime.now().toString(),
+      addressList: [
+        AddressList(
+          houseNumber: '31',
+          streetName: 'Madina Bagh',
+          pincode: '190015',
+          city: 'Srinagar',
+          state: 'Jammu & Kashmir',
+          country: 'India',
+          landmark: '',
+        ),
+      ],
     ),
     AddedCustomer(
       firstName: 'Rayan',
@@ -28,6 +40,17 @@ class AddedCustomerProvider with ChangeNotifier {
       state: 'J & K',
       country: 'India',
       createdAt: DateTime.now().toString(),
+      addressList: [
+        AddressList(
+          houseNumber: '31',
+          streetName: 'Madina Bagh',
+          pincode: '190015',
+          city: 'Srinagar',
+          state: 'Jammu & Kashmir',
+          country: 'India',
+          landmark: '',
+        ),
+      ],
     ),
   ];
   void addNewCustomer(AddedCustomer newCustomer) {
