@@ -7,15 +7,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:shiprocket/screens/map_view.dart';
 import 'package:shiprocket/widgets/text_form_field_container.dart';
 
 import '../utils/box_styles.dart';
 import '../utils/color.dart';
+import '../utils/functions/location_permissions.dart';
 import '../widgets/common_top_bar.dart';
 
-List<Placemark> placemarks = [];
-double lat = 0.0;
-double lng = 0.0;
 final StreamController<List<Placemark>> placemarkController =
     StreamController<List<Placemark>>.broadcast();
 
@@ -146,6 +145,8 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                                         ),
                                       )
                                     : MapView(
+                                        infoMsg:
+                                            'Your order will be picked up from here:',
                                         lat: lat,
                                         lng: lng,
                                         controller: _controller,
@@ -154,6 +155,8 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                               }
                               if (snapshot.hasData) {
                                 return MapView(
+                                  infoMsg:
+                                      'Your order will be picked up from here:',
                                   lat: lat,
                                   lng: lng,
                                   controller: _controller,
@@ -172,6 +175,8 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                                       ),
                                     )
                                   : MapView(
+                                      infoMsg:
+                                          'Your order will be picked up from here:',
                                       lat: lat,
                                       lng: lng,
                                       controller: _controller,
@@ -858,24 +863,301 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                                                                     ],
                                                                   ),
                                                                 ),
-                                                                CustomScrollView(
-                                                                  slivers: [
-                                                                    SliverFillRemaining(
-                                                                      hasScrollBody:
-                                                                          false,
-                                                                      child:
-                                                                          Expanded(
-                                                                        child:
-                                                                            Container(
+                                                                Expanded(
+                                                                  child:
+                                                                      SingleChildScrollView(
+                                                                    child:
+                                                                        Column(
+                                                                      children: [
+                                                                        Container(
+                                                                          margin:
+                                                                              EdgeInsets.all(14.0),
+                                                                          padding:
+                                                                              EdgeInsets.all(14.0),
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(6.0),
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: ColorStyle.borderGrey,
+                                                                            ),
+                                                                            color:
+                                                                                Colors.white,
+                                                                          ),
                                                                           child:
                                                                               Column(
-                                                                            children: [],
+                                                                            children: [
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: addressNicknameController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'Address Nick Name',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: contactNameController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'Contact Name',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: phoneNumberController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'Phone Number',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: alternatePhoneNumberController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'Alternate Phone Number (Optional)',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: emailController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'Email ID',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: houseNumberController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'House no /Flat no. Buildina Name (299/15, B-Block, Van Vihar)',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: streetNameController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'locality / Street Name (Optional)',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              TextFormFieldContainer(
+                                                                                textForm: Center(
+                                                                                  child: TextField(
+                                                                                    controller: landmarkController,
+                                                                                    decoration: InputDecoration(
+                                                                                      border: InputBorder.none,
+                                                                                      labelText: 'Landmark (Optional)',
+                                                                                      labelStyle: TextStyle(
+                                                                                        fontSize: 16,
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              Row(
+                                                                                children: [
+                                                                                  Expanded(
+                                                                                    child: TextFormFieldContainer(
+                                                                                      textForm: Center(
+                                                                                        child: TextField(
+                                                                                          controller: pincodeController,
+                                                                                          decoration: InputDecoration(
+                                                                                            border: InputBorder.none,
+                                                                                            labelText: 'Pincode',
+                                                                                            labelStyle: TextStyle(
+                                                                                              fontSize: 16,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  SizedBox(
+                                                                                    width: 14,
+                                                                                  ),
+                                                                                  Expanded(
+                                                                                    child: TextFormFieldContainer(
+                                                                                      backgroundColor: Color.fromARGB(10, 74, 67, 122),
+                                                                                      textForm: Center(
+                                                                                        child: TextField(
+                                                                                          enabled: false,
+                                                                                          controller: cityController,
+                                                                                          decoration: InputDecoration(
+                                                                                            border: InputBorder.none,
+                                                                                            labelText: 'City',
+                                                                                            labelStyle: TextStyle(
+                                                                                              fontSize: 16,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                              Row(
+                                                                                children: [
+                                                                                  Expanded(
+                                                                                    child: TextFormFieldContainer(
+                                                                                      backgroundColor: Color.fromARGB(10, 74, 67, 122),
+                                                                                      textForm: Center(
+                                                                                        child: TextField(
+                                                                                          enabled: false,
+                                                                                          controller: stateController,
+                                                                                          decoration: InputDecoration(
+                                                                                            border: InputBorder.none,
+                                                                                            labelText: 'State',
+                                                                                            labelStyle: TextStyle(
+                                                                                              fontSize: 16,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                  SizedBox(
+                                                                                    width: 14,
+                                                                                  ),
+                                                                                  Expanded(
+                                                                                    child: TextFormFieldContainer(
+                                                                                      backgroundColor: Color.fromARGB(10, 74, 67, 122),
+                                                                                      textForm: Center(
+                                                                                        child: TextField(
+                                                                                          enabled: false,
+                                                                                          controller: countryController,
+                                                                                          decoration: InputDecoration(
+                                                                                            border: InputBorder.none,
+                                                                                            labelText: 'Country',
+                                                                                            labelStyle: TextStyle(
+                                                                                              fontSize: 16,
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                              SizedBox(
+                                                                                height: 20,
+                                                                              ),
+                                                                            ],
                                                                           ),
                                                                         ),
-                                                                      ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              30,
+                                                                        ),
+                                                                        Container(
+                                                                          padding:
+                                                                              EdgeInsets.symmetric(horizontal: 14.0),
+                                                                          width:
+                                                                              double.infinity,
+                                                                          height:
+                                                                              55,
+                                                                          child:
+                                                                              ElevatedButton(
+                                                                            style:
+                                                                                ElevatedButton.styleFrom(
+                                                                              elevation: 0,
+                                                                              backgroundColor: ColorStyle.colorPrimary,
+                                                                              shape: RoundedRectangleBorder(
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
+                                                                            ),
+                                                                            onPressed:
+                                                                                () {},
+                                                                            child:
+                                                                                Text(
+                                                                              'Add Address',
+                                                                              style: TextStyle(
+                                                                                fontSize: 16,
+                                                                                fontWeight: FontWeight.w400,
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              70,
+                                                                        ),
+                                                                      ],
                                                                     ),
-                                                                  ],
-                                                                )
+                                                                  ),
+                                                                ),
                                                               ],
                                                             ),
                                                           );
@@ -979,263 +1261,9 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
   }
 }
 
-class MapView extends StatefulWidget {
-  MapView({
-    Key? key,
-    required this.lat,
-    required this.lng,
-    required this.pickedLoc,
-    required Completer<GoogleMapController> controller,
-  })  : _controller = controller,
-        super(key: key);
-
-  final double lat;
-  final double lng;
-  final Completer<GoogleMapController> _controller;
-  LatLng pickedLoc;
-
-  @override
-  State<MapView> createState() => _MapViewState();
-}
-
-class _MapViewState extends State<MapView> {
-  Set<Marker> markers = {};
-  BitmapDescriptor pickedLocationMarker = BitmapDescriptor.defaultMarker;
-  @override
-  void initState() {
-    setCustomMarkerIcon();
-    super.initState();
-  }
-
-  setCustomMarkerIcon() async {
-    await BitmapDescriptor.fromAssetImage(
-      ImageConfiguration.empty,
-      "assets/place-picker.png",
-    ).then((icon) {
-      setState(() {
-        pickedLocationMarker = icon;
-      });
-      return pickedLocationMarker;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GoogleMap(
-          initialCameraPosition: CameraPosition(
-            target: LatLng(
-              widget.lat,
-              widget.lng,
-            ),
-            zoom: 14.4746,
-          ),
-          scrollGesturesEnabled: true,
-          gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
-            Factory<OneSequenceGestureRecognizer>(
-              () => EagerGestureRecognizer(),
-            ),
-          },
-          myLocationEnabled: true,
-          myLocationButtonEnabled: true,
-          onMapCreated: (controller) async {
-            widget._controller.complete(controller);
-            placemarks = await placemarkFromCoordinates(
-              widget.pickedLoc.latitude,
-              widget.pickedLoc.longitude,
-            );
-          },
-          onCameraIdle: () async {
-            placemarks = await placemarkFromCoordinates(
-              widget.pickedLoc.latitude,
-              widget.pickedLoc.longitude,
-            );
-            placemarkController.add(placemarks);
-          },
-          onCameraMove: (position) async {
-            widget.pickedLoc = position.target;
-          },
-          mapType: MapType.terrain,
-        ),
-        const MapSearchField(),
-        Center(
-          child: Transform.translate(
-            offset: Offset(0, -45),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 40,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 95, 82, 210),
-                        border: Border.all(
-                          color: Color.fromARGB(255, 95, 82, 210),
-                        ),
-                      ),
-                      height: 40,
-                      child: StreamBuilder<List<Placemark>>(
-                        stream: placemarkController.stream,
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            return Text(
-                              'Your order will be picked up from here: ${snapshot.data![0].street},${snapshot.data![0].subLocality}, ${snapshot.data![0].locality}, ${snapshot.data![0].postalCode}',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            );
-                          }
-                          return Text('Loading');
-                        },
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      child: Transform.translate(
-                        offset: const Offset(0, 11.5),
-                        child: Container(
-                          width: double.infinity,
-                          alignment: Alignment.bottomCenter,
-                          child: SizedBox(
-                            width: 22.5,
-                            height: 12.5,
-                            child: Transform.rotate(
-                              angle: 3.14,
-                              child: CustomPaint(
-                                painter: TrianglePainter(
-                                  strokeColor: Color.fromARGB(255, 95, 82, 210),
-                                  strokeWidth: 10,
-                                  paintingStyle: PaintingStyle.fill,
-                                ),
-                                child: const SizedBox(
-                                  height: 20,
-                                  width: 20,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 13,
-                ),
-                SizedBox(
-                  height: 40,
-                  child: Image.asset('assets/place-picker.png'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 getAddress() async {
   placemarks = await placemarkFromCoordinates(
     lat,
     lng,
   );
-}
-
-class MapSearchField extends StatelessWidget {
-  static final _formKey = GlobalKey<FormState>();
-
-  const MapSearchField({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.all(12.0),
-      child: Form(
-        key: _formKey,
-        child: TextFormFieldContainer(
-          textForm: Center(
-            child: TextField(
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: 'Search for a nearby landmark',
-                prefixIcon: Icon(
-                  Icons.search,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-checkLocationPermissions() async {
-  bool serviceEnabled;
-  LocationPermission permission;
-
-  // Test if location services are enabled.
-  serviceEnabled = await Geolocator.isLocationServiceEnabled();
-  if (!serviceEnabled) {
-    return Future.error('Location services are disabled.');
-  }
-
-  permission = await Geolocator.checkPermission();
-  if (permission == LocationPermission.denied) {
-    permission = await Geolocator.requestPermission();
-    if (permission == LocationPermission.denied) {
-      return Future.error('Location permissions are denied');
-    }
-  }
-
-  if (permission == LocationPermission.deniedForever) {
-    return Future.error(
-        'Location permissions are permanently denied, we cannot request permissions.');
-  }
-}
-
-class TrianglePainter extends CustomPainter {
-  final Color strokeColor;
-  final PaintingStyle paintingStyle;
-  final double strokeWidth;
-
-  TrianglePainter(
-      {this.strokeColor = Colors.black,
-      this.strokeWidth = 3,
-      this.paintingStyle = PaintingStyle.stroke});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = strokeColor
-      ..strokeWidth = strokeWidth
-      ..style = paintingStyle;
-
-    canvas.drawPath(getTrianglePath(size.width, size.height), paint);
-  }
-
-  Path getTrianglePath(double x, double y) {
-    return Path()
-      ..moveTo(0, y)
-      ..lineTo(x / 2, 0)
-      ..lineTo(x, y)
-      ..lineTo(0, y);
-  }
-
-  @override
-  bool shouldRepaint(TrianglePainter oldDelegate) {
-    return oldDelegate.strokeColor != strokeColor ||
-        oldDelegate.paintingStyle != paintingStyle ||
-        oldDelegate.strokeWidth != strokeWidth;
-  }
 }

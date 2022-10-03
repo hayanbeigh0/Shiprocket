@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shiprocket/provider/added_customer.dart';
+import 'package:shiprocket/screens/add_new_address.dart';
 
 import '../utils/color.dart';
 import '../widgets/text_form_field_container.dart';
@@ -826,12 +827,19 @@ class _CustomerDetailState extends State<CustomerDetail> {
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),
-                                  Text(
-                                    '+Add New Address',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500,
-                                      color: ColorStyle.colorPrimary,
+                                  GestureDetector(
+                                    onTap: () => Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => AddNewAddress(),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      '+Add New Address',
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        color: ColorStyle.colorPrimary,
+                                      ),
                                     ),
                                   )
                                 ],

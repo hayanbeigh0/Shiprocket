@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shiprocket/screens/add_pickup_address.dart';
+import 'package:shiprocket/screens/customer_detail_screen.dart';
 import 'package:shiprocket/screens/kyc_screens/kyc_screen1.dart';
 import 'package:shiprocket/provider/added_customer.dart';
 import 'package:shiprocket/provider/courier_company_provider.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const AddPickupAddress(),
+        home: BottomNavigation(),
       ),
     );
   }
