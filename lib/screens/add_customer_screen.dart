@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shiprocket/models/address_list.dart';
 import 'package:shiprocket/models/pincode_to_address.dart';
@@ -932,7 +933,9 @@ class _AddCustomerState extends State<AddCustomer> {
                                   city: cityController.text,
                                   state: stateController.text,
                                   country: countryController.text,
-                                  createdAt: DateTime.now().toString(),
+                                  createdAt: DateFormat('dd MMMM yyyy, h:mm a')
+                                      .format(DateTime.now())
+                                      .toString(),
                                   addressList: [
                                     AddressList(
                                       houseNumber: houseNumberController.text,

@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import 'overview_tab.dart';
 
@@ -44,7 +45,7 @@ class _CODTabState extends State<CODTab> {
                         height: 20,
                       ),
                       Text(
-                        'Last Synced at: ${DateTime.now()}',
+                        'Last Synced at: ${DateFormat('dd MMMM yyyy').format(DateTime.now())}',
                         style: const TextStyle(
                           fontSize: 12,
                           color: Color.fromARGB(128, 0, 0, 0),

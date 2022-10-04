@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../chart/bar_chart.dart';
 
@@ -11,6 +12,7 @@ class OverviewTab extends StatefulWidget {
 }
 
 class _OverviewTabState extends State<OverviewTab> {
+  DateTime dateTime = DateTime.now();
   String? selectedValue;
   String orderInfoType = 'Total Orders';
   String orderInfoDescription = 'All orders made by seller';
@@ -39,7 +41,7 @@ class _OverviewTabState extends State<OverviewTab> {
                         height: 20,
                       ),
                       Text(
-                        'Last Synced at: ${DateTime.now()}',
+                        'Last Synced at: ${DateFormat('dd MMMM yyyy').format(DateTime.now())}',
                         style: const TextStyle(
                           fontSize: 12,
                           color: Color.fromARGB(128, 0, 0, 0),
