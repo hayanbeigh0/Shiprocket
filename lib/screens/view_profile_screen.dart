@@ -15,8 +15,8 @@ class ViewProfile extends StatefulWidget {
 
 class _ViewProfileState extends State<ViewProfile> {
   Map<String, dynamic> userData = {
-    'companyName': 'Titan',
-    'email': 'titan@gmail.com',
+    'companyName': 'Shiprocket',
+    'email': 'shiprocket@gmail.com',
   };
   late Map<String, dynamic> newUserData;
   late CameraController controller;

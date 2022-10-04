@@ -16,8 +16,8 @@ class SignupScreen extends StatelessWidget {
             height: 300,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                  'https://app.shiprocket.in/sr_login/assets/images/bgmobileview.png',
+                image: AssetImage(
+                  'assets/signin-screen-image.png',
                 ),
               ),
             ),

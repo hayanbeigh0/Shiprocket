@@ -15,10 +15,10 @@ class SigninScreen extends StatelessWidget {
         children: [
           Container(
             height: 300,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
-                  'https://app.shiprocket.in/sr_login/assets/images/bgmobileview.png',
+                image: AssetImage(
+                  'assets/signin-screen-image.png',
                 ),
               ),
             ),
