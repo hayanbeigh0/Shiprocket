@@ -1,12 +1,16 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shiprocket/models/address_list.dart';
+import 'package:shiprocket/models/pincode_to_address.dart';
 import 'package:shiprocket/provider/added_customer.dart';
 
 import '../models/added_customer.dart';
 import '../utils/color.dart';
 import '../widgets/text_form_field_container.dart';
+import 'package:http/http.dart' as http;
 
 class AddCustomer extends StatefulWidget {
   const AddCustomer({Key? key}) : super(key: key);
@@ -18,9 +22,9 @@ class AddCustomer extends StatefulWidget {
 class _AddCustomerState extends State<AddCustomer> {
   @override
   void initState() {
-    countryController.text = 'India';
-    stateController.text = 'J&K';
-    cityController.text = 'Srinagar';
+    countryController.text = '';
+    stateController.text = '';
+    cityController.text = '';
     super.initState();
   }
 
@@ -625,6 +629,9 @@ class _AddCustomerState extends State<AddCustomer> {
                                       });
                                     }
                                   },
+                                  onFieldSubmitted: (value) {
+                                    loadAddressData(value);
+                                  },
                                   decoration: const InputDecoration(
                                     labelText: 'Pincode',
                                     labelStyle: TextStyle(
@@ -962,5 +969,23 @@ class _AddCustomerState extends State<AddCustomer> {
         ],
       ),
     );
+  }
+
+  void loadAddressData(String pincode) async {
+    final response = await http
+        .get(Uri.parse('http://www.postalpincode.in/api/pincode/$pincode'));
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      final address = PincodeToAddress.fromJson(jsonDecode(response.body));
+      print(address.postOffice![0].state);
+      stateController.text = address.postOffice![0].state.toString();
+      countryController.text = address.postOffice![0].country.toString();
+      cityController.text = address.postOffice![0].division.toString();
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      throw Exception('Failed to load address!');
+    }
   }
 }
