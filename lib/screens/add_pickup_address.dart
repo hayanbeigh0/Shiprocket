@@ -19,7 +19,9 @@ double lng = 0.0;
 List<Placemark> placemarks = [];
 
 class AddPickupAddress extends StatefulWidget {
-  const AddPickupAddress({super.key});
+  const AddPickupAddress({
+    super.key,
+  });
 
   @override
   State<AddPickupAddress> createState() => _AddPickupAddressState();
@@ -201,7 +203,6 @@ class _AddPickupAddressState extends State<AddPickupAddress> {
                               stream: placemarkController.stream,
                               builder: (context, snapshot) {
                                 if (snapshot.hasData) {
-                                  print(snapshot.data!.length.toString());
                                   return Expanded(
                                     child: Text(
                                       '${snapshot.data![0].street},${snapshot.data![0].subLocality}, ${snapshot.data![0].locality}',
@@ -1328,7 +1329,7 @@ class MapView extends StatefulWidget {
     required Completer<GoogleMapController> controller,
   })  : _controller = controller,
         super(key: key);
-  String infoMsg;
+  final String infoMsg;
   final double lat;
   final double lng;
   final Completer<GoogleMapController> _controller;
