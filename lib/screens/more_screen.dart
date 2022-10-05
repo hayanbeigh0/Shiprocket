@@ -31,7 +31,7 @@ class MoreScreen extends StatefulWidget {
 }
 
 class _MoreScreenState extends State<MoreScreen> {
-  final String userFullName = 'Hayan Beigh';
+  final String userFullName = 'John Doe';
 
   final String iconPath = 'assets/icons/apps.svg';
 
@@ -55,8 +55,8 @@ class _MoreScreenState extends State<MoreScreen> {
             Row(
               children: [
                 const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
+                  backgroundImage: AssetImage(
+                    'assets/person-image.png',
                   ),
                   radius: 40,
                 ),
@@ -228,9 +228,13 @@ class _MoreScreenState extends State<MoreScreen> {
                   builder: (context) => const DashboardScreen(),
                 ),
               ),
-              child: const OptionListItem(
-                itemName: 'Dashboard',
-                iconData: MyIcons.th_large_outline,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Dashboard',
+                  iconData: MyIcons.th_large_outline,
+                ),
               ),
             ),
             const SizedBox(
@@ -242,9 +246,13 @@ class _MoreScreenState extends State<MoreScreen> {
                   builder: (context) => const CustomersScreen(),
                 ),
               ),
-              child: const OptionListItem(
-                itemName: 'Customers',
-                iconData: MyIcons.customers,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Customers',
+                  iconData: MyIcons.customers,
+                ),
               ),
             ),
             const SizedBox(
@@ -254,9 +262,13 @@ class _MoreScreenState extends State<MoreScreen> {
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => const WalletAndPassbookTab(),
               )),
-              child: const OptionListItem(
-                itemName: 'Wallet & Passbook',
-                iconData: MyIcons.wallet_and_passbook,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Wallet & Passbook',
+                  iconData: MyIcons.wallet_and_passbook,
+                ),
               ),
             ),
             const SizedBox(
@@ -266,9 +278,13 @@ class _MoreScreenState extends State<MoreScreen> {
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => WeightDiscrepancy(),
               )),
-              child: const OptionListItem(
-                itemName: 'Weight Discrepencies',
-                iconData: MyIcons.weight_descrepancies,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Weight Discrepencies',
+                  iconData: MyIcons.weight_descrepancies,
+                ),
               ),
             ),
             const SizedBox(
@@ -278,9 +294,13 @@ class _MoreScreenState extends State<MoreScreen> {
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => Manifests(),
               )),
-              child: const OptionListItem(
-                itemName: 'Manifests',
-                iconData: MyIcons.manifests,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Manifests',
+                  iconData: MyIcons.manifests,
+                ),
               ),
             ),
             const SizedBox(
@@ -497,9 +517,13 @@ class _MoreScreenState extends State<MoreScreen> {
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => CODRemmitance(),
               )),
-              child: const OptionListItem(
-                itemName: 'COD Remittance',
-                iconData: MyIcons.cod_remmitance,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'COD Remittance',
+                  iconData: MyIcons.cod_remmitance,
+                ),
               ),
             ),
             const SizedBox(
@@ -513,9 +537,13 @@ class _MoreScreenState extends State<MoreScreen> {
                   ),
                 );
               },
-              child: const OptionListItem(
-                itemName: 'Settings',
-                iconData: MyIcons.settings,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Settings',
+                  iconData: MyIcons.settings,
+                ),
               ),
             ),
             const SizedBox(
@@ -588,9 +616,13 @@ class _MoreScreenState extends State<MoreScreen> {
                   builder: (context) => FAQ(),
                 ),
               ),
-              child: const OptionListItem(
-                itemName: 'Help & Support',
-                iconData: MyIcons.help_and_support,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Help & Support',
+                  iconData: MyIcons.help_and_support,
+                ),
               ),
             ),
             const SizedBox(
@@ -602,17 +634,28 @@ class _MoreScreenState extends State<MoreScreen> {
                   builder: (context) => const HelpAndSupport(),
                 ),
               ),
-              child: const OptionListItem(
-                itemName: 'FAQ',
-                iconData: MyIcons.faq,
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'FAQ',
+                  iconData: MyIcons.faq,
+                ),
               ),
             ),
             const SizedBox(
               height: 10,
             ),
-            const OptionListItem(
-              itemName: 'Privacy Policy',
-              iconData: MyIcons.privacy_policy,
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: double.infinity,
+                color: Colors.transparent,
+                child: const OptionListItem(
+                  itemName: 'Privacy Policy',
+                  iconData: MyIcons.privacy_policy,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,

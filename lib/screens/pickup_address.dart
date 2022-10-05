@@ -16,7 +16,7 @@ class PickupAddress extends StatelessWidget {
           CommonTopBar(
             title: 'Pickup Address',
             trailingWidget: Row(
-              children: [
+              children: const [
                 Icon(
                   Icons.search,
                   size: 30,
@@ -64,14 +64,14 @@ class PickupAddress extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: 12,
                       right: 12,
                       top: 8,
                       bottom: 12,
                     ),
                     decoration: BoxDecoration(
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 3,
                           spreadRadius: 1,
@@ -89,7 +89,7 @@ class PickupAddress extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 'Primary',
                                 style: TextStyle(
                                   fontSize: 16,
@@ -100,10 +100,11 @@ class PickupAddress extends StatelessWidget {
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                      color: Color.fromARGB(23, 98, 144, 209),
+                                      color: const Color.fromARGB(
+                                          23, 98, 144, 209),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
-                                    padding: EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     child: Text(
                                       'Primary Address',
                                       style: TextStyle(
@@ -121,42 +122,42 @@ class PickupAddress extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
-                        Text(
+                        const Text(
                           'Hayan Beigh',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           '31, Madina Bagh Chanapora Srinagar',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
                           children: [
-                            Text(
+                            const Text(
                               'Phone:',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
-                            Text(
+                            const Text(
                               '7006866149',
                               style: TextStyle(
                                 fontSize: 16,
@@ -164,13 +165,13 @@ class PickupAddress extends StatelessWidget {
                                 color: Color.fromARGB(255, 111, 110, 110),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Row(
-                              children: [
+                              children: const [
                                 Icon(
-                                  FontAwesomeIcons.checkCircle,
+                                  FontAwesomeIcons.circleCheck,
                                   color: Colors.green,
                                   size: 17,
                                 ),
@@ -192,7 +193,7 @@ class PickupAddress extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                     child: SizedBox(),
                   ),
                   SizedBox(
@@ -207,10 +208,10 @@ class PickupAddress extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => AddPickupAddress(),
+                          builder: (context) => const AddPickupAddress(),
                         ));
                       },
-                      child: Text(
+                      child: const Text(
                         'Add Pickup Address',
                         style: TextStyle(
                           fontSize: 16,
@@ -218,7 +219,7 @@ class PickupAddress extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],
